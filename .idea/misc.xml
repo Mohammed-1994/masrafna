@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable-xxxhdpi/background_gradient.xml" value="0.22685185185185186" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable-xxxhdpi/edit_text_background.xml" value="0.2518518518518518" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/background_button.xml" value="0.20572916666666666" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/background_gradient.xml" value="0.22685185185185186" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/edit_text_background.xml" value="0.22685185185185186" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/green_gradient.xml" value="0.1574074074074074" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/main_gradient.xml" value="0.2518518518518518" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/secondary_gradient.xml" value="0.1574074074074074" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/whte_rounded_button.xml" value="0.22685185185185186" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_splash.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_confirm_code.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_first.xml" value="0.25" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_fourth.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_login.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_second.xml" value="0.22" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_signup.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_third.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_tirhd.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_welcome.xml" value="0.25833333333333336" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/navigation_login">
+
+    <fragment
+        android:id="@+id/navigation_login"
+        android:name="com.example.masrafna.ui.fragments.login.LoginFragment"
+        android:label="login"
+        tools:layout="@layout/fragment_login" />
+
+    <fragment
+        android:id="@+id/navigation_signup"
+        android:name="com.example.masrafna.ui.fragments.signup.SignupFragment"
+        android:label="signup"
+        tools:layout="@layout/fragment_signup" />
+    <fragment
+        android:id="@+id/confirmCodeFragment"
+        android:name="com.example.masrafna.ui.fragments.signup.ConfirmCodeFragment"
+        android:label="confirm code"
+        tools:layout="@layout/fragment_confirm_code" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.masrafna.ui.fragments.signup.WelcomeFragment"
+        android:label="welcome"
+        tools:layout="@layout/fragment_welcome" />
+</navigation>

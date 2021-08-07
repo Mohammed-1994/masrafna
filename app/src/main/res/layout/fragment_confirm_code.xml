@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.signup.ConfirmCodeFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/create_new_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/confirm_the_code"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/create_new_account"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:text="@string/confirm_the_code_sent" />
+
+
+        <EditText
+            android:id="@+id/code_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text"
+            android:layout_marginHorizontal="48dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edit_text_background"
+            android:backgroundTint="@null"
+            android:gravity="center"
+            android:hint="@string/the_code"
+            android:inputType="phone"
+            android:padding="16dp" />
+
+
+        <TextView
+            android:id="@+id/did_not_get_the_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/code_et"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/did_not_get_the_code" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/send_again_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/did_not_get_the_code"
+            android:layout_centerHorizontal="true"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/main_gradient"
+            android:backgroundTint="@null"
+            android:paddingHorizontal="48dp"
+            android:text="@string/send_again"
+            android:textColor="@color/white" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/send_again_btn"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/main_gradient"
+            android:backgroundTint="@null"
+            android:text="@string/create_account"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</ScrollView>

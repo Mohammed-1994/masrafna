@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">مصرفنا</string>
+    <string name="have_an_account">لديك حساب؟ تسجيل الدخول</string>
+    <string name="confirm">تأكيد</string>
+    <string name="welcome_again">مرحباً بك مجدداً</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="password">كلمة السر</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="create_new_account">تسجيل حساب جديد</string>
+    <string name="create_new_account_details">سجل حساب جديد لتصلك كافة الاشعارات</string>
+    <string name="first_name">الاسم الأول</string>
+    <string name="last_name">الاسم الأخير</string>
+    <string name="confirm_password">تأكيد كلمة السر</string>
+    <string name="create_account">انشاء حساب</string>
+    <string name="confirm_the_code">تأكيد الرمز المرسل</string>
+    <string name="confirm_the_code_sent">الرجاء تأكيد الرمز المرسل اليك في رسالة نصية</string>
+    <string name="the_code">الرمز المرسل</string>
+    <string name="did_not_get_the_code">لم أستلم الرمز</string>
+    <string name="send_again">ارسل مرة أخرى</string>
+    <string name="welcome_text">تم تسجيل حسابك بنجاح في تطبيق مصرفنا, الرجاء الانتقال الى الصفحة الرئيسية للتعرف على التطبيق والاستفادة من خدماته.</string>
+    <string name="welcome_in_masrafna_title">مرحبا بك في تطبيق مصرفنا</string>
+    <string name="welcome_in_masrafna_text">دليلك الشامل والمتكامل لكل المصارف العراقية والخجنات الرئيسية المقدمة من المصارف للأفراد والشركات والأخبار العاليمة</string>
+    <string name="strart">ابدأ</string>
+    <string name="main_features">الخدمات الرئيسية</string>
+    <string name="next">التالي</string>
+    <string name="iraqi_banks">المصارف العراقية</string>
+    <string name="main_features_text">الان أصبح بامكانك التعرف على كافة الخدمات المصرفية وكل متطلبات القروض وفتح الحسابات</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="news">الأخبار</string>
+    <string name="news_text">وآخر الأخبار المالية والاقتصادية بالاضافة الى البحوث والدراسات العلمية</string>
+</resources>
