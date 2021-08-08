@@ -23,7 +23,7 @@ class ThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.nextBtn.setOnClickListener {
-            it.findNavController().navigate(R.id.fragment_fourth)
+            it.findNavController().navigate(R.id.action_fragment_third_to_fragment_fourth)
         }
     }
 }

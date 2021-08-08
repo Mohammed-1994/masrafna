@@ -9,21 +9,47 @@
         android:id="@+id/fragment_first"
         android:name="com.example.masrafna.ui.fragments.spalsh.FirstFragment"
         android:label="first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_fragment_first_to_fragment_second"
+            app:destination="@id/fragment_second"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_second"
         android:name="com.example.masrafna.ui.fragments.spalsh.SecondFragment"
         android:label="second"
-        tools:layout="@layout/fragment_second" />
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_fragment_second_to_fragment_third"
+            app:destination="@id/fragment_third"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_third"
         android:name="com.example.masrafna.ui.fragments.spalsh.ThirdFragment"
         android:label="third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third">
+        <action
+            android:id="@+id/action_fragment_third_to_fragment_fourth"
+            app:destination="@id/fragment_fourth"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_fourth"
         android:name="com.example.masrafna.ui.fragments.spalsh.FourthFragment"
         android:label="fourth"
-        tools:layout="@layout/fragment_fourth" />
+        tools:layout="@layout/fragment_fourth">
+
+    </fragment>
 
 </navigation>
