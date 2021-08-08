@@ -1,8 +1,6 @@
 package com.example.masrafna.ui.navigation
 
 import android.os.Bundle
-import android.view.Menu
-import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -30,8 +28,6 @@ class NavigationDrawerActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_navigation_drawer)
         setSupportActionBar(binding.appBarNavigation.toolbar)
 
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -40,10 +36,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
-//        binding.appBarNavigation.toolbarLayout.nav.setOnClickListener {
-//            if (!binding.drawerLayout.isOpen)
-//                binding.drawerLayout.open()
-//        }
+
     }
 
 

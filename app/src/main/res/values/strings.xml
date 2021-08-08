@@ -40,4 +40,11 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <string name="search_banks">ابحث عن مصرف</string>
+    <string name="contain_all_features">وتشمل جميع الخدمات المصرفية</string>
+    <string name="banks">المصارف</string>
+    <string name="see_iraqi_banks">تعرف على المصارف العراقية وخدماتتها</string>
+    <string name="more">المزيد</string>
+    <string name="articles">مقالات الكترونية</string>
+    <string name="articles_text">"من الشخصيات التي ساهمت في تطوير القطاع المصرفي العراقي والتي تقوم دائما بابتكار النماذج الجديدة لتطوير القطاع المصرفي اضافة الى المبادرات المستمرة التي تقدم الدعم المستمر لهذا القطاع "</string>
 </resources>
