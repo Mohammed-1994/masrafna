@@ -12,21 +12,20 @@
         android:layout_height="wrap_content"
         android:background="#00000000"
         android:elevation="0dp"
+
         android:theme="@style/Theme.Masrafna.AppBarOverlay"
         app:elevation="0dp"
         app:liftOnScroll="true">
 
         <com.google.android.material.appbar.MaterialToolbar
-
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:layout_scrollFlags="scroll|enterAlways|snap">
+            android:theme="@style/ToolbarThem_font"
+            app:layout_scrollFlags="scroll|enterAlways|snap"
+            app:titleCentered="true"
+            app:titleTextColor="@color/white" />
 
-            <include
-                android:id="@+id/toolbar_layout"
-                layout="@layout/toolbar" />
-        </com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 

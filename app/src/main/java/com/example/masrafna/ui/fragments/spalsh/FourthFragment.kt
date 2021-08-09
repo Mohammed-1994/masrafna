@@ -6,11 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.findNavController
-import com.example.masrafna.R
-import com.example.masrafna.databinding.FragmentFirstBinding
 import com.example.masrafna.databinding.FragmentFourthBinding
-import com.example.masrafna.ui.MainActivity
+import com.example.masrafna.ui.LoggingActivity
 
 class FourthFragment : Fragment() {
     private lateinit var binding: FragmentFourthBinding
@@ -25,7 +22,7 @@ class FourthFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.loginBtn.setOnClickListener {
-            startActivity(Intent(requireContext(), MainActivity::class.java))
+            startActivity(Intent(requireContext(), LoggingActivity::class.java))
             requireActivity().finish()
         }
     }

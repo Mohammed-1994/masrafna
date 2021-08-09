@@ -2,9 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single"
+        >
 
         <item
+            
             android:id="@+id/nav_home"
             android:icon="@drawable/home"
             android:title="الرئيسية" />
@@ -13,7 +15,7 @@
             android:icon="@drawable/user_minus"
             android:title="الصفحة الشخصية" />
         <item
-            android:id="@+id/info_menu_item"
+            android:id="@+id/nav_info"
             android:icon="@drawable/info"
             android:title="تعرف على مصرفنا" />
         <item
@@ -21,7 +23,7 @@
             android:icon="@drawable/marked"
             android:title="مفضلاتي" />
         <item
-            android:id="@+id/terms_menu_item"
+            android:id="@+id/nav_terms"
             android:icon="@drawable/terms_icon"
             android:title="شروط الخدمة" />
         <item

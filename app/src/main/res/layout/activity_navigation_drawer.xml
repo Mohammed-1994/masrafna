@@ -18,9 +18,10 @@
             android:id="@+id/app_bar_navigation"
             layout="@layout/app_bar_navigation_drawer"
             android:layout_width="match_parent"
+            android:layout_marginBottom="?attr/actionBarSize"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_marginBottom="?attr/actionBarSize" />
+/>
 
         <ImageView
             android:layout_width="match_parent"
@@ -31,10 +32,11 @@
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNav"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="?attr/actionBarSize"
             android:layout_alignParentBottom="true"
             android:background="@drawable/main_bottom_nav_background"
-            android:backgroundTint="@null"
+            android:backgroundTint="@android:color/transparent"
+            android:theme="@style/icons_font"
             android:visibility="visible"
             app:menu="@menu/bottom_menu" />
 
@@ -42,10 +44,11 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
 
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
+        app:itemTextAppearance="@style/icons_font"
         android:layout_marginTop="24dp"
         android:background="@drawable/navigation_background"
         android:fitsSystemWindows="true"
@@ -53,6 +56,7 @@
         app:itemIconPadding="16dp"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
-        app:menu="@menu/navigatino_drawer_menu" />
+        app:menu="@menu/navigatino_drawer_menu"
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

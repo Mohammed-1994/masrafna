@@ -24,7 +24,7 @@
         android:layout_marginBottom="24dp"
         android:text="@string/welcome_again"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        style="@style/Titles_font"
         android:textStyle="bold" />
 
 
@@ -42,6 +42,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edit_text_background"
             android:backgroundTint="@null"
+            style="@style/hint_font"
             android:gravity="center"
             android:hint="@string/phone_number"
             android:inputType="phone"
@@ -56,6 +57,7 @@
             android:background="@drawable/edit_text_background"
             android:backgroundTint="@null"
             android:gravity="center"
+            style="@style/hint_font"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="16dp" />
@@ -71,6 +73,7 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/main_gradient"
         android:backgroundTint="@null"
+        style="@style/buttons"
         android:text="@string/confirm"
         android:textColor="@color/white" />
 
@@ -79,7 +82,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-
+        style="@style/hint_font"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="24dp"
         android:text="@string/create_new_account" />

@@ -14,11 +14,13 @@
             android:exported="true"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/Theme.Masrafna.NoActionBar" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity
             android:name=".ui.fragments.spalsh.SplashActivity"
@@ -26,10 +28,12 @@
 
         </activity>
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.LoggingActivity"
             android:exported="true">
 
         </activity>
+
+
     </application>
 
 </manifest>

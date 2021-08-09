@@ -20,19 +20,20 @@
         <TextView
             android:id="@+id/welcome_tv"
             android:layout_width="match_parent"
+            style="@style/Titles_font"
             android:layout_height="wrap_content"
             android:layout_below="@id/checked"
             android:layout_marginBottom="16dp"
             android:gravity="center"
             android:paddingHorizontal="16dp"
             android:text="أهلا شيماء"
-            android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textColor="@color/black" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome_tv"
+            style="@style/hint_font"
             android:gravity="center"
             android:paddingHorizontal="16dp"
             android:text="@string/welcome_text"

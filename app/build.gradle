@@ -80,5 +80,8 @@ dependencies {
     //custom-progress-dialog
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
+    // circular image view
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
 
 }

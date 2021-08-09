@@ -22,12 +22,13 @@
             android:id="@+id/create_new_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:theme="@style/Titles_font"
             android:layout_below="@+id/logo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="@string/confirm_the_code"
             android:textColor="@color/black"
-            android:textSize="20sp"
+
             android:textStyle="bold" />
 
 
@@ -35,7 +36,7 @@
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:theme="@style/hint_font"
             android:layout_below="@+id/create_new_account"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="48dp"
@@ -53,6 +54,7 @@
             android:background="@drawable/edit_text_background"
             android:backgroundTint="@null"
             android:gravity="center"
+            android:theme="@style/hint_font"
             android:hint="@string/the_code"
             android:inputType="phone"
             android:padding="16dp" />
@@ -62,7 +64,7 @@
             android:id="@+id/did_not_get_the_code"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            style="@style/hint_font"
             android:layout_below="@+id/code_et"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
@@ -72,6 +74,7 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/send_again_btn"
+            style="@style/buttons"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/did_not_get_the_code"
@@ -81,8 +84,7 @@
             android:background="@drawable/main_gradient"
             android:backgroundTint="@null"
             android:paddingHorizontal="48dp"
-            android:text="@string/send_again"
-            android:textColor="@color/white" />
+            android:text="@string/send_again" />
 
 
         <androidx.appcompat.widget.AppCompatButton
@@ -95,8 +97,8 @@
             android:layout_marginBottom="24dp"
             android:background="@drawable/main_gradient"
             android:backgroundTint="@null"
-            android:text="@string/create_account"
-            android:textColor="@color/white" />
+            style="@style/buttons"
+            android:text="@string/create_account" />
     </RelativeLayout>
 
 </ScrollView>

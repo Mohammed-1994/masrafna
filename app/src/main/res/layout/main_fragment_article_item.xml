@@ -29,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/card"
+        style="@style/normal_font"
         android:gravity="center"
         android:text="@string/banks"
         android:textColor="@color/black"
@@ -39,6 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/title"
+        style="@style/hint_font"
         android:gravity="center"
         android:text="@string/see_iraqi_banks"
         android:textStyle="bold" />
@@ -48,6 +50,7 @@
         android:id="@+id/more_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/buttons"
         android:layout_below="@id/desc"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"

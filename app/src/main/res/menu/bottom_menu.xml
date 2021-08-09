@@ -6,7 +6,7 @@
         android:title="@string/main" />
     <item
         android:id="@+id/nav_contact"
-        android:icon="@drawable/ic_baseline_mail_outline_24"
+        android:icon="@drawable/email_icon"
         android:title="@string/contact" />
     <item
         android:id="@+id/nav_notification"
