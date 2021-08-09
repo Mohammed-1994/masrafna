@@ -19,24 +19,24 @@
             layout="@layout/app_bar_navigation_drawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true" />
+            android:layout_alignParentTop="true"
+            android:layout_marginBottom="?attr/actionBarSize" />
 
-<!--        <TextView-->
-<!--            android:id="@+id/header_title"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_alignParentTop="true"-->
-<!--            android:layout_centerInParent="true"-->
-<!--            android:text="مصرفنا"-->
-<!--            android:layout_marginTop="16dp"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold" />-->
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/ecllips"
-            android:layout_alignParentTop="true"/>
+            android:layout_alignParentTop="true"
+            android:src="@drawable/ecllips" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/main_bottom_nav_background"
+            android:backgroundTint="@null"
+            android:visibility="visible"
+            app:menu="@menu/bottom_menu" />
 
     </RelativeLayout>
 
@@ -54,4 +54,5 @@
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/navigatino_drawer_menu" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

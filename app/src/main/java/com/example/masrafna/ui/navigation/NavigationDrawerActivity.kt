@@ -1,6 +1,9 @@
 package com.example.masrafna.ui.navigation
 
 import android.os.Bundle
+import android.util.Log
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -11,6 +14,9 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.masrafna.R
 import com.example.masrafna.databinding.ActivityNavigationDrawerBinding
+
+
+private const val TAG = "NavigationDrarAct myTag"
 
 class NavigationDrawerActivity : AppCompatActivity() {
 
@@ -32,11 +38,24 @@ class NavigationDrawerActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
-         ), drawerLayout
+            ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+        binding.bottomNav.setupWithNavController(navController)
 
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+
+            Log.d(TAG, "onCreate: ")
+            if (destination.id != R.id.nav_contact &&
+                destination.id != R.id.nav_notification &&
+                destination.id != R.id.nav_home
+            )
+
+                binding.bottomNav.visibility = GONE
+            else
+                binding.bottomNav.visibility = VISIBLE
+        }
     }
 
 

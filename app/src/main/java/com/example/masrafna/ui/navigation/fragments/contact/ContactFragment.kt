@@ -1,4 +1,4 @@
-package com.example.masrafna.ui.navigation.fragments.profile
+package com.example.masrafna.ui.navigation.fragments.contact
 
 import android.os.Bundle
 import android.util.Log
@@ -7,16 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.masrafna.R
-import com.example.masrafna.databinding.FragmentProfileBinding
+import com.example.masrafna.databinding.FragmentContactBinding
 
-private const val TAG = "ProfileFragment myTag"
-class ProfileFragment : Fragment() {
-    private lateinit var binding: FragmentProfileBinding
+private const val TAG = "ContactFragment myTag"
+
+class ContactFragment : Fragment() {
+    lateinit var binding: FragmentContactBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentProfileBinding.inflate(inflater, container, false)
+    ): View {
+        binding = FragmentContactBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 
@@ -24,5 +26,6 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Log.d(TAG, "onViewCreated: ")
     }
+
 
 }

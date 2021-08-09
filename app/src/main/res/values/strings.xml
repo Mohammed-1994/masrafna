@@ -47,4 +47,8 @@
     <string name="more">المزيد</string>
     <string name="articles">مقالات الكترونية</string>
     <string name="articles_text">"من الشخصيات التي ساهمت في تطوير القطاع المصرفي العراقي والتي تقوم دائما بابتكار النماذج الجديدة لتطوير القطاع المصرفي اضافة الى المبادرات المستمرة التي تقدم الدعم المستمر لهذا القطاع "</string>
+    <string name="contact">تواصل</string>
+    <string name="notifications">اشعارات</string>
+    <string name="main">الرئيسية</string>
+
 </resources>
