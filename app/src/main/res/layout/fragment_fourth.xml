@@ -67,8 +67,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/login_btn"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/dots3"
-        />
+        android:src="@drawable/dots3" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/login_btn"
@@ -77,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/white_rounded_button"
         android:backgroundTint="@null"

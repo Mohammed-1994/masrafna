@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import com.example.masrafna.data.models.CardHomeFragmentModel
 import com.example.masrafna.databinding.FragmentHomeBinding
 import androidx.core.view.ViewCompat
+import androidx.navigation.fragment.findNavController
 
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
@@ -39,6 +40,10 @@ class HomeFragment() : Fragment() {
         getViewPagerItems()
 
         getArticles()
+
+        binding.newsCard.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_home_to_fragment_news)
+        }
 
     }
 

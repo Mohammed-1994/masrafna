@@ -4,10 +4,11 @@ import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
 
 
+
 @Parcelize
-data class NotificationModel(
+data class NewsModel(
     var image: Int = 0,
     var title: String? = null,
     var desc: String? = null,
     var date: String? = null
-) : Parcelable
+):Parcelable

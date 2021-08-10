@@ -67,16 +67,16 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/next_btn"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/dots2"
-        />
+        android:src="@drawable/dots2" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next_btn"
+        style="@style/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/buttons"
         android:layout_alignParentBottom="true"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="24dp"
         android:layout_marginBottom="22dp"
         android:background="@drawable/main_gradient"
         android:backgroundTint="@null"

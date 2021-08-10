@@ -5,10 +5,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
+import com.example.masrafna.data.models.NewsModel
 import com.example.masrafna.data.models.NotificationModel
 import com.example.masrafna.databinding.NotificationItemBinding
+import com.example.masrafna.ui.navigation.fragments.news.NewsAdapter
 
-class NotificationAdapter(val context: Context) :
+class NotificationAdapter(val context: Context, private val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder>() {
 
     private var notificationList = ArrayList<NotificationModel>()
@@ -32,13 +34,15 @@ class NotificationAdapter(val context: Context) :
         with(holder) {
 
             binding.moreBtn.setOnClickListener {
-                Toast.makeText(context, currentNotification.title, Toast.LENGTH_SHORT).show()
+                clickListener.onItemClicked(currentNotification)
             }
 
             binding.date.text = currentNotification.date
             binding.title.text = currentNotification.title
             binding.desc.text = currentNotification.desc
             binding.image.setImageResource(currentNotification.image)
+
+
         }
 
 
@@ -51,6 +55,10 @@ class NotificationAdapter(val context: Context) :
     fun submitArticles(notificationsList: ArrayList<NotificationModel>) {
         this.notificationList = notificationsList
         notifyDataSetChanged()
+    }
+
+    interface OnItemClickListener{
+        fun onItemClicked(notification: NotificationModel)
     }
 
 }
