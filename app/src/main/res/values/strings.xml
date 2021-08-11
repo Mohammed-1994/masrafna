@@ -67,6 +67,23 @@
     <string name="call_us_text">الان بإمكانكم التواصل معنا على المواقع التالية ادناهوتتوفر لدينا خدمة الاجابة على استفساراتكم</string>
 
 
+    <!--  services_IDs  -->
+    <string name="other_services_id">other_services</string>
+    <string name="online_banking_services_id">online_banking_services</string>
+    <string name="western_union_id">western_union</string>
+    <string name="external_funding_icon_id">external_funding_icon</string>
+    <string name="letters_of_guarantee_id">letters_of_guarantee</string>
+    <string name="loans_and_financing_id">loans_and_financing</string>
+    <string name="localization_id">localization</string>
+    <string name="electronic_cards_id">electronic_cards</string>
+    <string name="deposit_accounts_id">deposit_accounts</string>
+    <string name="localization">التوطين</string>
+    <string name="localization_text">"الانترنت، اثر عظيم بحيث يعد ثورة جديدة متطورة في مجال الاعلام و الاتصالات، فالانترنت غير الكثير من المفاهيم الخاصة بالمكان و الزمان. ولم تعد العلاقة بين الفرد ووسيلة الاعلام علاقة المتلقي الذي لا يوجد له دور سوى ان يطلّع على ما تقدمه "</string>
+    <string name="banks_do_localization">المصارف التي تقدم خدمة التوطين</string>
+    <string name="localization_bank_title">التوطين في البنك الأهلي العراقي</string>
+    <string name="localization_bank_desc">"الانترنت، اثر عظيم بحيث يعد ثورة جديدة متطورة في مجال الاعلام و الاتصالات، فالانترنت غير الكثير من المفاهيم الخاصة بالمكان و الزمان. ولم تعد العلاقة بين الفرد ووسيلة الاعلام علاقة المتلقي الذي لا يوجد له دور سوى ان يطلّع على ما تقدمه "</string>
+
+
     <string-array name="planets_array">
         <item>بغداد</item>
         <item>الموصل</item>

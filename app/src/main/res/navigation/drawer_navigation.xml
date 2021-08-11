@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.masrafna.ui.navigation.fragments.home.HomeFragment"
+        android:name="com.example.masrafna.ui.navigation.home.HomeFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_home">
         <action
@@ -20,17 +20,17 @@
     </fragment>
     <fragment
         android:id="@+id/nav_contact"
-        android:name="com.example.masrafna.ui.navigation.fragments.contacts.ContactsFragment"
+        android:name="com.example.masrafna.ui.navigation.contacts.ContactsFragment"
         android:label="@string/contact"
         tools:layout="@layout/fragment_contacts" />
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.masrafna.ui.navigation.fragments.profile.ProfileFragment"
+        android:name="com.example.masrafna.ui.navigation.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_notification_list"
-        android:name="com.example.masrafna.ui.navigation.fragments.notifications.NotificationsListFragment"
+        android:name="com.example.masrafna.ui.navigation.notifications.NotificationsListFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notifications_list">
 
@@ -50,17 +50,17 @@
 
     <fragment
         android:id="@+id/nav_info"
-        android:name="com.example.masrafna.ui.navigation.fragments.info.InfoFragment"
+        android:name="com.example.masrafna.ui.navigation.info.InfoFragment"
         android:label="@string/meet_masrafna"
         tools:layout="@layout/fragment_info" />
     <fragment
         android:id="@+id/nav_terms"
-        android:name="com.example.masrafna.ui.navigation.fragments.terms.TermsFragment"
+        android:name="com.example.masrafna.ui.navigation.terms.TermsFragment"
         android:label="@string/terms"
         tools:layout="@layout/fragment_terms" />
     <fragment
         android:id="@+id/nav_news_list"
-        android:name="com.example.masrafna.ui.navigation.fragments.news.NewsListFragment"
+        android:name="com.example.masrafna.ui.navigation.news.NewsListFragment"
         android:label="@string/news"
         tools:layout="@layout/fragment_news_list">
         <action
@@ -79,7 +79,7 @@
 
     <fragment
         android:id="@+id/nav_news"
-        android:name="com.example.masrafna.ui.navigation.fragments.news.NewsFragment"
+        android:name="com.example.masrafna.ui.navigation.news.NewsFragment"
         android:label="@string/news"
         tools:layout="@layout/fragment_news">
         <argument
@@ -91,7 +91,7 @@
 
     <fragment
         android:id="@+id/nav_notification"
-        android:name="com.example.masrafna.ui.navigation.fragments.notifications.NotificationFragment"
+        android:name="com.example.masrafna.ui.navigation.notifications.NotificationFragment"
         android:label="@string/notifications"
         tools:layout="@layout/fragment_notification">
         <argument
@@ -99,6 +99,7 @@
             app:argType="com.example.masrafna.data.models.NotificationModel"
             app:nullable="true" />
     </fragment>
+
 
 
 </navigation>

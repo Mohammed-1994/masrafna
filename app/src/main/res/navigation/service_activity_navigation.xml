@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/service_activity_navigation"
+    app:startDestination="@id/nav_services_list">
+
+    <fragment
+        android:id="@+id/nav_services_list"
+        android:name="com.example.masrafna.ui.services.main.ServicesCategoriesFragment"
+
+        android:label="@string/main_features"
+        tools:layout="@layout/fragment_services_categories">
+
+
+        <action
+            android:id="@+id/action_to_localization_fragment"
+            app:destination="@id/nav_localization"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_localization"
+        android:name="com.example.masrafna.ui.services.localization.LocalizationFragment"
+        android:label="@string/localization"
+        tools:layout="@layout/fragment_localization">
+
+        <action
+            android:id="@+id/action_to_localization_bank_fragment"
+            app:destination="@id/nav_bank_localization"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left">
+
+            <argument
+                android:name="id"
+                android:defaultValue=""
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_bank_localization"
+        android:name="com.example.masrafna.ui.services.localization.BankLocalizationFragment"
+        android:label="@string/main_features"
+        tools:layout="@layout/fragment_bank_localization">
+
+        <argument
+            android:name="id"
+            android:defaultValue=""
+            app:argType="string" />
+    </fragment>
+</navigation>

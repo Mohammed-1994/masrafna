@@ -10,29 +10,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Masrafna">
         <activity
+            android:name=".ui.services.ServicesActivity"
+            android:exported="true"
+            android:parentActivityName=".ui.navigation.NavigationDrawerActivity" />
+        <activity
             android:name=".ui.navigation.NavigationDrawerActivity"
             android:exported="true"
             android:label="@string/title_activity_navigation_drawer"
-            android:theme="@style/Theme.Masrafna.NoActionBar" >
+            android:theme="@style/Theme.Masrafna.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
+
+
         <activity
             android:name=".ui.fragments.spalsh.SplashActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".ui.LoggingActivity"
-            android:exported="true">
-
-        </activity>
-
-
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.navigation.fragments.info.InfoFragment">
+    tools:context=".ui.navigation.info.InfoFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
             android:id="@+id/logo"
             android:layout_width="55dp"
@@ -19,6 +22,7 @@
 
         <TextView
             android:id="@+id/create_new_account"
+            style="@style/Titles_font"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/logo"
@@ -26,19 +30,18 @@
             android:layout_marginTop="4dp"
             android:text="@string/app_name"
             android:textColor="@color/black"
-            style="@style/Titles_font"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/text1"
             style="@style/normal_font"
-            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/create_new_account"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="24dp"
-            android:text="@string/challenges" />
+            android:text="@string/challenges"
+            android:textColor="@color/black" />
 
 
         <TextView
@@ -48,15 +51,13 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/text1"
             android:layout_centerHorizontal="true"
-            android:padding="16dp"
-            android:gravity="center"
             android:layout_marginTop="4dp"
             android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:padding="16dp"
             android:text="@string/challenges_text" />
-
-
-
     </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
 
 
-</ScrollView>
+
