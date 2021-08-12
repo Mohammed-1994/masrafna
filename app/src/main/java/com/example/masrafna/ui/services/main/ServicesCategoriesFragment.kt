@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.ServicesModel
 import com.example.masrafna.databinding.FragmentServicesCategoriesBinding
-import com.example.masrafna.ui.navigation.services.ServicesGridAdapter
 
 
 private const val TAG = "ServicesCategoriesFragm myTag"
@@ -116,6 +115,14 @@ class ServicesCategoriesFragment : Fragment(), ServicesListAdapter.OnServiceClic
     }
 
     override fun onClick(service: ServicesModel) {
-        findNavController().navigate(R.id.action_to_localization_fragment)
+        when (service.id) {
+            getString(R.string.localization_id) -> {
+                findNavController().navigate(R.id.action_to_localization_fragment)
+            }
+            getString(R.string.loans_and_financing_id) -> {
+                findNavController().navigate(R.id.action_from_service_list_to_loaning_financing_fragment)
+            }
+
+        }
     }
 }

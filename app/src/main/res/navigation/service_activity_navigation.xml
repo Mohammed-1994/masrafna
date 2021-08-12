@@ -20,6 +20,14 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+
+        <action
+            android:id="@+id/action_from_service_list_to_loaning_financing_fragment"
+            app:destination="@id/nav_fragment_loans_financing"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/nav_localization"
@@ -54,5 +62,115 @@
             android:name="id"
             android:defaultValue=""
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fragment_loans_financing"
+        android:name="com.example.masrafna.ui.services.loans_and_financing.LoansFinancingFragment"
+        android:label="@string/loans_and_financing"
+        tools:layout="@layout/fragment_loans_financing">
+
+        <action
+            android:id="@+id/action_from_loans_financing_to_loans_type_fragment"
+            app:destination="@id/nav_fragment_loans_type"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" >
+
+            <argument
+                android:name="view_type"
+                app:argType="integer"
+                android:defaultValue="1" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_fragment_personal_loans_list"
+        android:name="com.example.masrafna.ui.services.loans_and_financing.loans.LoansListFragment"
+        android:label="@string/loans_and_financing"
+        tools:layout="@layout/fragment_loans_list">
+
+
+        <action
+            android:id="@+id/action_from_personal_loans_list_to_personal_loan_fragment"
+            app:destination="@id/nav_personal_loan_fragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" >
+            <argument
+                android:name="loan_id"
+                app:argType="string"
+                android:defaultValue="" />
+        </action>
+
+        <argument
+            android:name="view_type"
+            app:argType="integer"
+            android:defaultValue="1" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_fragment_loans_type"
+        android:name="com.example.masrafna.ui.services.loans_and_financing.loans.LoansTypeFragment"
+        android:label="@string/loans_and_financing"
+        tools:layout="@layout/fragment_loans__type">
+
+        <action
+            android:id="@+id/action_from_loans_type_to_personal_loans_fragment"
+            app:destination="@id/nav_fragment_personal_loans_list"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" >
+            <argument
+                android:name="view_type"
+                app:argType="integer"
+                android:defaultValue="1" />
+        </action>
+        <argument
+            android:name="view_type"
+            app:argType="integer"
+            android:defaultValue="1" />
+
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_personal_loan_fragment"
+        android:name="com.example.masrafna.ui.services.loans_and_financing.loans.LoanFragment"
+        android:label="fragment_personal_loan"
+        tools:layout="@layout/fragment_loan">
+
+        <action
+            android:id="@+id/action_from_personal_loan_to_loan_details_fragment"
+            app:destination="@id/nav_personal_loan_details_fragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" >
+            <argument
+                android:name="loan_id"
+                app:argType="string"
+                android:defaultValue="" />
+
+        </action>
+        <argument
+            android:name="loan_id"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/nav_personal_loan_details_fragment"
+        android:name="com.example.masrafna.ui.services.loans_and_financing.loans.LoanDetailsFragment"
+        android:label="fragment_personla_loan_details"
+        tools:layout="@layout/fragment_loan_details" >
+        <argument
+            android:name="loan_id"
+            app:argType="string"
+            android:defaultValue="" />
+
     </fragment>
 </navigation>

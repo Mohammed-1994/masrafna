@@ -82,6 +82,15 @@
     <string name="banks_do_localization">المصارف التي تقدم خدمة التوطين</string>
     <string name="localization_bank_title">التوطين في البنك الأهلي العراقي</string>
     <string name="localization_bank_desc">"الانترنت، اثر عظيم بحيث يعد ثورة جديدة متطورة في مجال الاعلام و الاتصالات، فالانترنت غير الكثير من المفاهيم الخاصة بالمكان و الزمان. ولم تعد العلاقة بين الفرد ووسيلة الاعلام علاقة المتلقي الذي لا يوجد له دور سوى ان يطلّع على ما تقدمه "</string>
+    <string name="bank_loans">القروض المصرفية</string>
+    <string name="islamic_financing">التمويلات الاسلامية</string>
+    <string name="loans_and_financing">القروض والتمويلات</string>
+    <string name="loan_financing_chose">اختر القروض المصرفية او التمويلات الاسلامية وتمتع بالخدمات المقدمة من المصارف العراقية</string>
+    <string name="personal_loans">قروض الأفراد</string>
+    <string name="company_loans">قروض الشركات</string>
+    <string name="personal_financing">تمويلات الأفراد</string>
+    <string name="company_financing">تمويلات الشركات</string>
+    <string name="personal_loans_financing">قروض وتمويلات الأفراد</string>
 
 
     <string-array name="planets_array">
