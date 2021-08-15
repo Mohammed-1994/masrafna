@@ -12,4 +12,6 @@
     <dimen name="pageMarginAndOffset">40dp</dimen>
 
 
+
+    <integer name="column_width">140</integer>
 </resources>

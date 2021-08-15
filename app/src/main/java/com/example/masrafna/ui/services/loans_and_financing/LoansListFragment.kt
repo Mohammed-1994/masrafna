@@ -1,4 +1,4 @@
-package com.example.masrafna.ui.services.loans_and_financing.loans
+package com.example.masrafna.ui.services.loans_and_financing
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,11 +10,10 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.databinding.FragmentLoansListBinding
-import com.example.masrafna.ui.services.loans_and_financing.LoansFinancingFragment
 import com.example.masrafna.ui.services.loans_and_financing.LoansFinancingFragment.Companion.BANKS_LOANS
 import com.example.masrafna.ui.services.loans_and_financing.LoansFinancingFragment.Companion.ISLAMIC_FINANCING
-import com.example.masrafna.ui.services.loans_and_financing.loans.LoansTypeFragment.Companion.COMPANY
-import com.example.masrafna.ui.services.loans_and_financing.loans.LoansTypeFragment.Companion.PERSONAL
+import com.example.masrafna.ui.services.loans_and_financing.LoansTypeFragment.Companion.COMPANY
+import com.example.masrafna.ui.services.loans_and_financing.LoansTypeFragment.Companion.PERSONAL
 
 class LoansListFragment : Fragment() {
 

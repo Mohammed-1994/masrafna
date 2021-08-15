@@ -1,4 +1,4 @@
-package com.example.masrafna.ui.services.loans_and_financing.loans
+package com.example.masrafna.ui.services.loans_and_financing
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

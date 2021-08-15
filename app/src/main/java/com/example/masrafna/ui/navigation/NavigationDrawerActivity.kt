@@ -49,7 +49,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
             .layoutParams as ViewGroup.MarginLayoutParams
 
         val tempMargin = mainParms.bottomMargin
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+        navController.addOnDestinationChangedListener { _, destination, _ ->
 
             if (destination.id != R.id.nav_contact &&
                 destination.id != R.id.nav_notification_list &&

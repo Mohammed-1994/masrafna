@@ -37,8 +37,8 @@ class LoansFinancingFragment : Fragment() {
     }
 
     companion object {
-        val BANKS_LOANS = 1
-        val ISLAMIC_FINANCING = 2
+        const val BANKS_LOANS = 1
+        const val ISLAMIC_FINANCING = 2
     }
 
 }

@@ -5,9 +5,11 @@
     android:id="@+id/grid_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:horizontalSpacing="10dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:horizontalSpacing="8dp"
     android:numColumns="auto_fit"
-    android:verticalSpacing="10dp"
+    android:verticalSpacing="8dp"
     tools:listitem="@layout/services_grid_item">
 </GridView>
 

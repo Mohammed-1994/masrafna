@@ -1,4 +1,4 @@
-package com.example.masrafna.ui.services.loans_and_financing.loans
+package com.example.masrafna.ui.services.letters_guarantee
 
 import android.content.Context
 import android.os.Bundle
@@ -7,17 +7,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.BankModel
-import com.example.masrafna.databinding.FragmentLoanBinding
-import com.example.masrafna.databinding.FragmentLoginBinding
+import com.example.masrafna.databinding.FragmentLettersGuaranteeBinding
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
-class LoanFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
+class LettersGuaranteeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
 
-    private lateinit var binding: FragmentLoanBinding
+    private lateinit var binding: FragmentLettersGuaranteeBinding
     private lateinit var localizationListAdapter: LocalizationListAdapter
     private var mContext: Context? = null
     private var banksList = ArrayList<BankModel>()
@@ -25,28 +23,24 @@ class LoanFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentLoanBinding.inflate(inflater, container, false)
+    ): View? {
+        binding = FragmentLettersGuaranteeBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         mContext = requireContext()
         getBanks()
-
         localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
         binding.banksRv.apply {
             localizationListAdapter.submitBanks(banksList)
             adapter = localizationListAdapter
+
+
             layoutManager = GridLayoutManager(requireContext(), 2)
         }
-
-        val title = requireArguments().getString("loan_id")
-        binding.loanTitle.text = title
-
     }
 
     private fun getBanks() {
@@ -99,11 +93,9 @@ class LoanFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
 
     override fun onClick(bank: BankModel) {
         val id = bundleOf(
-            "loan_id" to bank.title
+            "id" to bank.title
         )
 
-        findNavController().navigate(R.id.action_from_personal_loan_to_loan_details_fragment, id)
     }
-
 
 }

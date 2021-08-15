@@ -6,7 +6,8 @@
 
     <item android:top="0dp">
         <shape android:shape="rectangle">
-            <corners android:radius="24dp" />
+            <corners android:bottomRightRadius="24dp"
+                android:bottomLeftRadius="24dp"/>
 
             <gradient
                 android:angle="90"

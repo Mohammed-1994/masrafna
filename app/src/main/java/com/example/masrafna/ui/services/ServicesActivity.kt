@@ -2,15 +2,11 @@ package com.example.masrafna.ui.services
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import android.view.Menu
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.masrafna.R
-import com.example.masrafna.data.models.ServicesModel
 import com.example.masrafna.databinding.ActivityServicesBinding
-import com.example.masrafna.ui.navigation.services.ServicesGridAdapter
 
 
 private const val TAG = "ServicesActivity myTag"
@@ -24,7 +20,7 @@ class ServicesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityServicesBinding.inflate(layoutInflater)
+        binding = com.example.masrafna.databinding.ActivityServicesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navController = findNavController(R.id.nav_host_fragment_content_services_activity)

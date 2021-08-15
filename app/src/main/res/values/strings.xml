@@ -77,6 +77,8 @@
     <string name="localization_id">localization</string>
     <string name="electronic_cards_id">electronic_cards</string>
     <string name="deposit_accounts_id">deposit_accounts</string>
+
+
     <string name="localization">التوطين</string>
     <string name="localization_text">"الانترنت، اثر عظيم بحيث يعد ثورة جديدة متطورة في مجال الاعلام و الاتصالات، فالانترنت غير الكثير من المفاهيم الخاصة بالمكان و الزمان. ولم تعد العلاقة بين الفرد ووسيلة الاعلام علاقة المتلقي الذي لا يوجد له دور سوى ان يطلّع على ما تقدمه "</string>
     <string name="banks_do_localization">المصارف التي تقدم خدمة التوطين</string>
@@ -91,6 +93,40 @@
     <string name="personal_financing">تمويلات الأفراد</string>
     <string name="company_financing">تمويلات الشركات</string>
     <string name="personal_loans_financing">قروض وتمويلات الأفراد</string>
+    <string name="electronic_cards">البطاقات الالكترونية</string>
+    <string name="debit_cards">البطاقات المدينة</string>
+    <string name="prepaid_cards">بطاقات الدفع المسبق</string>
+    <string name="credit_card">بطاقات دائنة</string>
+    <string name="banks_do_cards">المصارف التي تقدم خدمة البطاقات الالكترونية</string>
+    <string name="banks_do_accounts">المصارف التي تقدم هذا النوع من الحسابات</string>
+    <string name="deposit_accounts">الحسابات المصرفية</string>
+    <string name="saving_account">حساب التوفير والادخار</string>
+    <string name="fixed_deposit_accounts">حسابات الودائع الثابتة</string>
+    <string name="time_deposit_accounts">حسابات الودائع الوقتية</string>
+    <string name="certificate_deposit">شهادة الايداع</string>
+    <string name="current_accounts">حسابات جارية</string>
+    <string name="account_desc">تعرف على الحسابات المصرفية للافراد والشركات ومميزاتها</string>
+    <string name="credits_desc">تعرف على انواع الاعتمادات للافراد والشركات ومميزاتها</string>
+    <string name="external_funding">التمويلات الخارجية (الاعتمادات)</string>
+    <string name="documentary_credits">الاعتمادات المستندية</string>
+    <string name="external_remittances">الحوالات الخارجية</string>
+    <string name="letters_of_guarantee">خطابات الضمان</string>
+    <string name="banks_do_guarantee">المصارف التي تقدم خطابات الضمان</string>
+    <string name="western_union">الويسترن يونيون</string>
+    <string name="banks_do_western_union">المصارف التي تقدم الحوالات عن طريق الويسترن يونيون</string>
+    <string name="transfer_via_western_union">التحويل عن طريق ويسترن يونيون</string>
+    <string name="online_service">خدمات مصرفية عبر الانترنت</string>
+    <string name="banks_do_online_service">المصارف التي تقدم خدمات عبر الانترنت</string>
+    <string name="other_services_from_banks">خدمات مصرفية مقدمة من المصارف العراقية</string>
+    <string name="ratified_instruments">الصكوك المصدقة والسفاتج</string>
+    <string name="investments">الاستثمارات</string>
+    <string name="electronic_clearing_instruments">صكوك المقاصة الالكترونية</string>
+    <string name="establishing_companies">تأسيس الشركات والاكتتاب بأسمها</string>
+    <string name="account_statements">كشوفات الحساب</string>
+    <string name="foreign_remittances">الحوالات الخارجيةSWIFT</string>
+    <string name="internal_remittances">الحوالات الداخلية RTGS</string>
+    <string name="other_bank_services">خدمات مصرفية أخرى</string>
+    <string name="banks_do">المصارف التي تقدم خدمة</string>
 
 
     <string-array name="planets_array">

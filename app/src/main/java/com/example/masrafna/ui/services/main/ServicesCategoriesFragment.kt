@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.ServicesModel
 import com.example.masrafna.databinding.FragmentServicesCategoriesBinding
+import com.example.masrafna.util.NoOfColumns
 
 
 private const val TAG = "ServicesCategoriesFragm myTag"
@@ -41,8 +42,16 @@ class ServicesCategoriesFragment : Fragment(), ServicesListAdapter.OnServiceClic
         servicesListAdapter = ServicesListAdapter(mContext!!, this)
         servicesListAdapter.submitArticles(servicesList)
         binding.servicesRv.apply {
-            layoutManager = GridLayoutManager(requireContext(), 2)
+
+            val noOfColumns = NoOfColumns.calculateNoOfColumns(
+                requireContext(),
+                resources.getInteger(R.integer.column_width).toFloat()
+            )
+            val manager = GridLayoutManager(requireContext(), noOfColumns)
+//            layoutManager = manager
             adapter = servicesListAdapter
+            layoutManager = GridLayoutManager(requireContext(), 2)
+
         }
 
 
@@ -121,6 +130,27 @@ class ServicesCategoriesFragment : Fragment(), ServicesListAdapter.OnServiceClic
             }
             getString(R.string.loans_and_financing_id) -> {
                 findNavController().navigate(R.id.action_from_service_list_to_loaning_financing_fragment)
+            }
+            getString(R.string.electronic_cards_id) -> {
+                findNavController().navigate(R.id.action_from_service_list_to_cards_fragment)
+            }
+            getString(R.string.deposit_accounts_id) -> {
+                findNavController().navigate(R.id.action_services_list_to_accountsTypeFragment)
+            }
+            getString(R.string.external_funding_icon_id) -> {
+                findNavController().navigate(R.id.action_nav_services_list_to_nav_creditFragment)
+            }
+            getString(R.string.letters_of_guarantee_id) -> {
+                findNavController().navigate(R.id.action_nav_services_list_to_nav_guaranteeFragment)
+            }
+            getString(R.string.western_union_id) -> {
+                findNavController().navigate(R.id.action_nav_services_list_to_nav_westernUnionFragment)
+            }
+            getString(R.string.online_banking_services_id) -> {
+                findNavController().navigate(R.id.action_nav_services_list_to_nav_onlineServiceFragment)
+            }
+            getString(R.string.other_services_id) -> {
+                findNavController().navigate(R.id.action_nav_services_list_to_nav_otherServicesFragment)
             }
 
         }

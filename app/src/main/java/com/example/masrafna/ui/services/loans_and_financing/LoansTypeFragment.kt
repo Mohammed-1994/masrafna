@@ -1,4 +1,4 @@
-package com.example.masrafna.ui.services.loans_and_financing.loans
+package com.example.masrafna.ui.services.loans_and_financing
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -49,8 +49,7 @@ class LoansTypeFragment : Fragment() {
 
     private fun updateView() {
         when (viewType) {
-            BANKS_LOANS -> {
-                with(binding) {
+            BANKS_LOANS -> { with(binding) {
                     title.text = getString(R.string.bank_loans)
                     personal.text = getString(R.string.personal_loans)
                     company.text = getString(R.string.company_loans)
@@ -67,8 +66,8 @@ class LoansTypeFragment : Fragment() {
     }
 
     companion object {
-        val PERSONAL = 1
-        val COMPANY = 2
+        const val PERSONAL = 1
+        const val COMPANY = 2
     }
 
 }

@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.BankModel
 import com.example.masrafna.databinding.FragmentLocalizationBinding
+import com.example.masrafna.util.NoOfColumns
 
 
 private const val TAG = "LocalizationFragment myTag"
@@ -41,7 +42,8 @@ class LocalizationFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         binding.banksRv.apply {
             localizationListAdapter.submitBanks(banksList)
             adapter = localizationListAdapter
-            layoutManager = GridLayoutManager(requireContext(), 2)
+          layoutManager = GridLayoutManager(requireContext(), 2)
+
         }
     }
 
