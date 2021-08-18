@@ -1,267 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
+    android:background="@drawable/green_gradient"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
-tools:context=".ui.navigation.home.HomeFragment">
+    tools:context=".ui.navigation.home.HomeFragment">
 
-    <RelativeLayout
 
-        android:focusable="true"
-        android:focusableInTouchMode="true"
+    <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:focusable="true"
+        android:src="@drawable/ecllips" />
 
-        <EditText
-            android:id="@+id/search_et"
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/home_fragment_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true" />
+
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="48dp"
-            style="@style/hint_font"
-            android:layout_alignParentTop="true"
-            android:layout_marginHorizontal="48dp"
-            android:background="@drawable/edit_text_background"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:gravity="center"
-            android:hint="@string/search_banks"
-            android:paddingStart="16dp"
-            android:paddingEnd="8dp" />
+            android:layout_below="@id/toolbar"
+            android:layout_height="wrap_content">
 
-
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/viewPager"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_below="@id/search_et"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="16dp"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            android:foregroundGravity="center"
-            android:overScrollMode="never" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/features_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/viewPager"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            android:elevation="16dp"
-            app:cardCornerRadius="24dp">
-
-
-            <LinearLayout
-                android:id="@+id/main_features"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:paddingHorizontal="8dp"
-                android:background="@drawable/ripple_background"
 
-                android:paddingVertical="4dp"
-                android:weightSum="4">
+                android:layout_height="wrap_content">
 
-                <ImageView
-                    android:layout_width="0dp"
+                <EditText
+                    android:id="@+id/search_et"
+                    style="@style/hint_font"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/main_features_icon" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.5"
+                    android:paddingVertical="16dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginHorizontal="48dp"
+                    android:background="@drawable/edit_text_background"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
                     android:gravity="center"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        style="@style/normal_font"
-                        android:text="@string/main_features"
-                        android:textColor="@color/black"
-                        />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/contain_all_features"
-                        style="@style/hint_font" />
-
-                </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/main_features_go"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:background="@null"
-                    android:src="@drawable/go_icon" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/banks_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/features_card"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            android:elevation="16dp"
-            app:cardCornerRadius="24dp">
+                    android:hint="@string/search_banks"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="8dp" />
 
 
-            <LinearLayout
-                android:id="@+id/banks_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ripple_background"
-                android:orientation="horizontal"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:weightSum="4">
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@id/search_et"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="16dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:foregroundGravity="center"
+                    android:overScrollMode="never" />
 
-                <ImageView
-                    android:layout_width="0dp"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/features_card"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/banks_icon" />
+                    android:layout_below="@id/viewPager"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="24dp"
+                    android:elevation="16dp"
+                    app:cardCornerRadius="24dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/main_features"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/banks"
-                        android:textColor="@color/black"
-                        style="@style/normal_font" />
+                        android:background="@drawable/ripple_background"
+                        android:orientation="horizontal"
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/see_iraqi_banks"
-                        style="@style/hint_font" />
+                        android:weightSum="4">
 
-                </LinearLayout>
-
-                <ImageButton
-                    android:id="@+id/banks_go"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:background="@null"
-                    android:src="@drawable/go_icon" />
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/news_card"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/banks_card"
-            android:layout_marginHorizontal="24dp"
-            android:layout_marginTop="24dp"
-            android:elevation="16dp"
-            app:cardCornerRadius="24dp">
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            android:src="@drawable/main_features_icon" />
 
 
-            <LinearLayout
-                android:id="@+id/news_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-                android:background="@drawable/ripple_background"
+                            <TextView
+                                style="@style/normal_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/main_features"
+                                android:textColor="@color/black" />
 
-                android:orientation="horizontal"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:weightSum="4">
+                            <TextView
+                                style="@style/hint_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/contain_all_features" />
 
-                <ImageView
-                    android:layout_width="0dp"
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/main_features_go"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+
+                            android:background="@null"
+                            android:src="@drawable/go_icon" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/banks_card"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:src="@drawable/main_features_icon" />
+                    android:layout_below="@id/features_card"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="24dp"
+                    android:elevation="16dp"
+                    app:cardCornerRadius="24dp">
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.5"
-                    android:gravity="center"
-                    android:orientation="vertical">
 
-                    <TextView
+                    <LinearLayout
+                        android:id="@+id/banks_layout"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/news"
-                        android:textColor="@color/black"
-                        style="@style/normal_font" />
+                        android:background="@drawable/ripple_background"
+                        android:orientation="horizontal"
+                        android:weightSum="4">
 
-                </LinearLayout>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/banks_icon" />
 
-                <ImageButton
-                    android:id="@+id/news_go"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:background="@null"
-                    android:src="@drawable/go_icon" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
 
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                            <TextView
+                                style="@style/normal_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/banks"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                style="@style/hint_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/see_iraqi_banks" />
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/banks_go"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:background="@null"
+                            android:src="@drawable/go_icon" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/news_card"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/banks_card"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="24dp"
+                    android:elevation="16dp"
+                    app:cardCornerRadius="24dp">
 
 
-        <TextView
-            android:id="@+id/articles"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/news_card"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="@string/articles"
-            android:textColor="@color/black"
-            style="@style/normal_font" />
+                    <LinearLayout
+                        android:id="@+id/news_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/articles_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/articles"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:textColor="@color/black"
-            style="@style/hint_font"
-            android:layout_marginBottom="8dp"
-            android:gravity="center"
-            android:paddingHorizontal="24dp"
-            android:text="@string/articles_text"
-             />
+                        android:background="@drawable/ripple_background"
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/articles_rv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/articles_text"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-            tools:listitem="@layout/main_fragment_article_item" />
+                        android:orientation="horizontal"
+                        android:weightSum="4">
 
-    </RelativeLayout>
-</androidx.core.widget.NestedScrollView>
+                        <ImageView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="1"
+                            android:src="@drawable/main_features_icon" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2.5"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                style="@style/normal_font"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/news"
+                                android:textColor="@color/black" />
+
+                        </LinearLayout>
+
+                        <ImageButton
+                            android:id="@+id/news_go"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="0.5"
+                            android:background="@null"
+                            android:src="@drawable/go_icon" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/articles"
+                    style="@style/normal_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/news_card"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center"
+                    android:text="@string/articles"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:id="@+id/articles_text"
+                    style="@style/hint_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/articles"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:paddingHorizontal="24dp"
+                    android:text="@string/articles_text"
+                    android:textColor="@color/black" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/articles_rv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/articles_text"
+                    android:orientation="horizontal"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    tools:listitem="@layout/main_fragment_article_item" />
+            </RelativeLayout>
+        </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

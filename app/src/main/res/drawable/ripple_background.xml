@@ -21,7 +21,7 @@
 
             <!-- If you want to add some padding -->
             <!-- Here is the corner radius -->
-            <corners android:radius="24dp" />
+            <corners android:radius="0dp" />
 
         </shape>
     </item>

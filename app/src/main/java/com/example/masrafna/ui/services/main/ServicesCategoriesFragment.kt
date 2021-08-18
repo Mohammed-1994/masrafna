@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.ServicesModel
 import com.example.masrafna.databinding.FragmentServicesCategoriesBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.util.NoOfColumns
 
 
@@ -39,6 +40,7 @@ class ServicesCategoriesFragment : Fragment(), ServicesListAdapter.OnServiceClic
         mContext = requireContext()
         getServicesList()
 
+        setupToolbar()
         servicesListAdapter = ServicesListAdapter(mContext!!, this)
         servicesListAdapter.submitArticles(servicesList)
         binding.servicesRv.apply {
@@ -55,6 +57,23 @@ class ServicesCategoriesFragment : Fragment(), ServicesListAdapter.OnServiceClic
         }
 
 
+    }
+
+    private fun setupToolbar() {
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.title.text = getString(R.string.main_features)
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
     }
 
     private fun getServicesList() {

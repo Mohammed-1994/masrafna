@@ -143,6 +143,7 @@
     <string name="forgot_password">نسيت كلمة المرور؟</string>
     <string name="reset_password">إعادة تعيين كلمة المرور</string>
     <string name="enter_your_phone">ادخل رقم الهاتف لتصلك رسالة التأكيد</string>
+    <string name="back">رجوع</string>
 
 
     <string-array name="planets_array">

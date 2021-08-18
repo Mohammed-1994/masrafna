@@ -16,7 +16,9 @@ import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
 import com.example.masrafna.R
 import com.example.masrafna.data.models.ArticleHomeFragmentModel
+import com.example.masrafna.databinding.ActivityNavigationDrawerBinding
 import com.example.masrafna.databinding.FragmentHomeBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.ServicesActivity
 
 
@@ -43,14 +45,17 @@ class HomeFragment() : Fragment() {
 
 
         getViewPagerItems()
-
+        setupToolbar()
         getArticles()
         getToken()
+
+
+
         binding.newsCard.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_home_to_fragment_news)
         }
         binding.featuresCard.setOnClickListener {
-            startActivity(Intent(requireContext(), ServicesActivity::class.java))
+            findNavController().navigate(R.id.action_nav_home_to_nav_services_list)
         }
         binding.banksCard.setOnClickListener {
             findNavController().navigate(R.id.action_nav_home_to_nav_banksListFragment)
@@ -58,12 +63,28 @@ class HomeFragment() : Fragment() {
 
     }
 
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+        }
+
+        if (!resources.getBoolean(R.bool.is_right_to_left)) {
+            binding.newsGo.rotation = 180f
+            binding.banksGo.rotation = 180f
+            binding.mainFeaturesGo.rotation = 180f
+        }
+    }
+
     private fun getToken() {
         val sharedPref = activity?.getSharedPreferences(
             getString(R.string.access_token_preferences), Context.MODE_PRIVATE
         )
         val token = sharedPref?.getString(getString(R.string.access_token), null)
-        Log.d(TAG, "checkAuth: $token")
+
     }
 
     /**
@@ -101,6 +122,7 @@ class HomeFragment() : Fragment() {
         populateArticles()
 
     }
+
 
     private fun populateArticles() {
         articleHomeFragmentAdapter = ArticleHomeFragmentAdapter(requireContext())

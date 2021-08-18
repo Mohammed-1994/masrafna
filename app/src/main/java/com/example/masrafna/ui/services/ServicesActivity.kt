@@ -25,9 +25,9 @@ class ServicesActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_content_services_activity)
 
-        setSupportActionBar(binding.appBarActivityServices.toolbar)
+//        setSupportActionBar(binding.appBarActivityServices.toolbar)
 
-        setupActionBarWithNavController(navController)
+//        setupActionBarWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_services_list,
@@ -35,9 +35,9 @@ class ServicesActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
 
-        binding.appBarActivityServices.toolbar.setNavigationOnClickListener {
-            navController.navigateUp()
-        }
+//        binding.appBarActivityServices.toolbar.setNavigationOnClickListener {
+//            navController.navigateUp()
+//        }
 
     }
 

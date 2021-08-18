@@ -29,7 +29,7 @@
     android:ellipsize="marquee"
     android:fontFamily="@font/bahij_bold"
     android:padding="8dp"
-    android:paddingVertical="8dp"
+    android:paddingVertical="16dp"
     android:singleLine="true"
     android:textAlignment="center"
     android:textColor="@color/white" />

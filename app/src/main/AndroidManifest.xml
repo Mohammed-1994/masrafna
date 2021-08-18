@@ -17,6 +17,7 @@
         <activity
             android:name=".ui.navigation.NavigationDrawerActivity"
             android:exported="true"
+            android:windowSoftInputMode="stateVisible|adjustPan"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/Theme.Masrafna.NoActionBar">
 

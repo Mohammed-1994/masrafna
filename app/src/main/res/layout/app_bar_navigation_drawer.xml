@@ -7,37 +7,30 @@
     android:layout_height="match_parent"
     tools:context=".ui.navigation.NavigationDrawerActivity">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#00000000"
-        android:elevation="0dp"
-        android:theme="@style/Theme.Masrafna.AppBarOverlay"
-        app:elevation="0dp"
-        app:liftOnScroll="true">
+<!--    <com.google.android.material.appbar.AppBarLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="#00000000"-->
+<!--        android:elevation="0dp"-->
+<!--        android:theme="@style/Theme.Masrafna.AppBarOverlay"-->
+<!--        app:elevation="0dp"-->
+<!--        app:liftOnScroll="true">-->
 
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:theme="@style/ToolbarThem_font"
-            app:layout_scrollFlags="scroll|enterAlways|snap"
-            app:titleCentered="true"
-            app:titleTextColor="@color/white" />
+<!--        <com.google.android.material.appbar.MaterialToolbar-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?attr/actionBarSize"-->
+<!--            android:theme="@style/ToolbarThem_font"-->
+<!--            app:layout_scrollFlags="scroll|enterAlways|snap"-->
+<!--            app:titleCentered="true"-->
+<!--            app:titleTextColor="@color/white" />-->
 
 
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/scroll"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+<!--    </com.google.android.material.appbar.AppBarLayout>-->
 
         <include
             android:id="@+id/content_navigation_drawer"
             layout="@layout/content_navigation_drawer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
-    </androidx.core.widget.NestedScrollView>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

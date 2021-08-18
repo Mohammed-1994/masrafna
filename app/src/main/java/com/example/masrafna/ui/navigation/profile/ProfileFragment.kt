@@ -11,8 +11,10 @@ import android.view.View.VISIBLE
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.DatePicker
+import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.databinding.FragmentProfileBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import java.util.*
 
 private const val TAG = "ProfileFragment myTag"
@@ -35,9 +37,27 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupToolbar()
         getData()
         setupSpinner()
         setTextFields()
+    }
+
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
     }
 
     /**
