@@ -3,11 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".ui.fragments.signup.SignupFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.loging.signup.SignupFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <com.github.ybq.android.spinkit.SpinKitView
+            android:id="@+id/progress_bar"
+            style="@style/SpinKitView.Large.Circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:elevation="16dp"
+            android:visibility="gone"
+            app:SpinKit_Color="#01BBFC"
+            android:layout_centerInParent="true"
+            />
 
         <ImageView
             android:id="@+id/logo"
@@ -130,10 +143,10 @@
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/create_btn"
+            style="@style/buttons"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/agree_check"
-            style="@style/buttons"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="16dp"
             android:background="@drawable/main_gradient"

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import com.example.masrafna.R
 import com.example.masrafna.databinding.FragmentBankLocalizationBinding
 
@@ -26,6 +27,7 @@ class BankLocalizationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
         Log.d(TAG, "onViewCreated: ${requireArguments().getString("id")}")
     }
 

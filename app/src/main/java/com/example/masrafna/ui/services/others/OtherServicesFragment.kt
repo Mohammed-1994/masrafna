@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ScrollView
 import androidx.core.os.bundleOf
 import androidx.core.view.iterator
 import androidx.navigation.fragment.findNavController
@@ -28,6 +29,8 @@ class OtherServicesFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
         val buttonClicked = View.OnClickListener {
             val title = (it as Button).text
             val bundle = bundleOf("id" to title)

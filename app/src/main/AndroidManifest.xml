@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.masrafna">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,20 +19,22 @@
             android:exported="true"
             android:label="@string/title_activity_navigation_drawer"
             android:theme="@style/Theme.Masrafna.NoActionBar">
+
+        </activity>
+
+
+        <activity
+            android:name=".ui.spalsh.SplashActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.loging.LoggingActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-        <activity
-            android:name=".ui.fragments.spalsh.SplashActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.LoggingActivity"
-            android:exported="true" />
     </application>
 
 </manifest>

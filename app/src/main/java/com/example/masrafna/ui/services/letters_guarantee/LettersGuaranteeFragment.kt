@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
@@ -30,7 +31,11 @@ class LettersGuaranteeFragment : Fragment(), LocalizationListAdapter.OnBankClick
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+
         mContext = requireContext()
+
+        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
         getBanks()
         localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 

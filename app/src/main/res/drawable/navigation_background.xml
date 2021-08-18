@@ -5,7 +5,8 @@
     <item>
         <shape android:shape="rectangle">
             <corners
-                android:radius="48dp"
+                android:topRightRadius="48dp"
+                android:bottomRightRadius="48dp"
                 />
             <gradient
 

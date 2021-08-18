@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.findNavController
@@ -14,6 +15,13 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.masrafna.R
 import com.example.masrafna.databinding.ActivityNavigationDrawerBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.shape.CornerFamily
+
+import com.google.android.material.shape.MaterialShapeDrawable
+import android.view.WindowManager
+
+import android.view.Gravity
+import android.view.Window
 
 
 private const val TAG = "NavigationDrarAct myTag"
@@ -21,7 +29,7 @@ private const val TAG = "NavigationDrarAct myTag"
 class NavigationDrawerActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-    private lateinit var binding: ActivityNavigationDrawerBinding
+    lateinit var binding: ActivityNavigationDrawerBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +38,13 @@ class NavigationDrawerActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
+
         val navView: NavigationView = binding.navView
+
         val navController = findNavController(R.id.nav_host_fragment_content_navigation_drawer)
 
         setSupportActionBar(binding.appBarNavigation.toolbar)
+
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -51,12 +62,15 @@ class NavigationDrawerActivity : AppCompatActivity() {
         val tempMargin = mainParms.bottomMargin
         navController.addOnDestinationChangedListener { _, destination, _ ->
 
-            if (destination.id != R.id.nav_contact &&
-                destination.id != R.id.nav_notification_list &&
-                destination.id != R.id.nav_notification &&
-                destination.id != R.id.nav_news &&
-                destination.id != R.id.nav_news_list &&
-                destination.id != R.id.nav_home
+            binding.appBarNavigation.scroll
+                .fullScroll(ScrollView.FOCUS_UP)
+
+            if (destination.id !=R.id.nav_contact &&
+                destination.id !=R.id.nav_notification_list &&
+                destination.id !=R.id.nav_notification &&
+                destination.id !=R.id.nav_news &&
+                destination.id !=R.id.nav_news_list &&
+                destination.id !=R.id.nav_home
             ) {
                 binding.bottomNav.visibility = GONE
 
@@ -72,11 +86,12 @@ class NavigationDrawerActivity : AppCompatActivity() {
                 param.bottomMargin = tempMargin
             }
         }
+
     }
 
 
     override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment_content_navigation_drawer)
+        val navController = findNavController(com.example.masrafna.R.id.nav_host_fragment_content_navigation_drawer)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 

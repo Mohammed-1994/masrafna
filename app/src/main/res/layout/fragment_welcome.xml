@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fragments.signup.WelcomeFragment">
+    tools:context=".ui.loging.signup.WelcomeFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -19,8 +19,8 @@
 
         <TextView
             android:id="@+id/welcome_tv"
-            android:layout_width="match_parent"
             style="@style/Titles_font"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/checked"
             android:layout_marginBottom="16dp"
@@ -30,14 +30,27 @@
             android:textColor="@color/black" />
 
         <TextView
+            style="@style/hint_font"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/welcome_tv"
-            style="@style/hint_font"
             android:gravity="center"
             android:paddingHorizontal="16dp"
             android:text="@string/welcome_text"
             android:textColor="@color/black" />
+
     </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/enter"
+        style="@style/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/main_gradient"
+        android:text="@string/enter" />
 
 </RelativeLayout>

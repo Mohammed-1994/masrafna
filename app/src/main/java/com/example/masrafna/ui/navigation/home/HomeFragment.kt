@@ -1,7 +1,9 @@
 package com.example.masrafna.ui.navigation.home
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -17,6 +19,8 @@ import com.example.masrafna.data.models.ArticleHomeFragmentModel
 import com.example.masrafna.databinding.FragmentHomeBinding
 import com.example.masrafna.ui.services.ServicesActivity
 
+
+private const val TAG = "HomeFragment myTag"
 
 class HomeFragment() : Fragment() {
 
@@ -41,16 +45,25 @@ class HomeFragment() : Fragment() {
         getViewPagerItems()
 
         getArticles()
-
+        getToken()
         binding.newsCard.setOnClickListener {
             findNavController().navigate(R.id.action_fragment_home_to_fragment_news)
         }
-
         binding.featuresCard.setOnClickListener {
             startActivity(Intent(requireContext(), ServicesActivity::class.java))
-
+        }
+        binding.banksCard.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_home_to_nav_banksListFragment)
         }
 
+    }
+
+    private fun getToken() {
+        val sharedPref = activity?.getSharedPreferences(
+            getString(R.string.access_token_preferences), Context.MODE_PRIVATE
+        )
+        val token = sharedPref?.getString(getString(R.string.access_token), null)
+        Log.d(TAG, "checkAuth: $token")
     }
 
     /**

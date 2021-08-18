@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/SDK/Sdk/platforms/android-30/data/res/layout/simple_spinner_dropdown_item.xml" value="0.21481481481481482" />
         <entry key="..\:/SDK/Sdk/platforms/android-30/data/res/layout/simple_spinner_item.xml" value="0.21481481481481482" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable-ar/navigation_background.xml" value="0.20572916666666666" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable-ldpi/main_bottom_nav_background.xml" value="0.2388888888888889" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable-v24/services_gradient.xml" value="0.25925925925925924" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable-xxxhdpi/background_gradient.xml" value="0.22685185185185186" />
@@ -28,22 +29,29 @@
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/white_rounded_button.xml" value="0.22685185185185186" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/drawable/whte_rounded_button.xml" value="0.22685185185185186" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/font/cairo_black.xml" value="0.24259259259259258" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout-ldltr/nav_header_navigation_drawer.xml" value="0.18958333333333333" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_logging.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_navigation_drawer.xml" value="0.25" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_services.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/activity_splash.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/app_bar_activity_services.xml" value="0.22" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/app_bar_navigation_drawer.xml" value="0.25" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/bank_details_snippet.xml" value="0.2" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/bank_item.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/bank_service_item.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/content_navigation_drawer.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/content_services_activity.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_account_details.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_accounts_type.xml" value="0.22" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_bank_details.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_bank_localization.xml" value="0.22" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_banks_list.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_banks_service.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_blank.xml" value="0.24322916666666666" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_card_details.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_card_type.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_change_password.xml" value="0.18958333333333333" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_confirm_code.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_contact.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_contacts.xml" value="0.33" />
@@ -64,6 +72,8 @@
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_loans_list.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_localization.xml" value="0.24322916666666666" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_login.xml" value="0.25833333333333336" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_logout.xml" value="0.2" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_navigation_dialog.xml" value="0.22" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_news.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_news_list.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_notification.xml" value="0.25833333333333336" />
@@ -76,7 +86,8 @@
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_personal_loans.xml" value="0.24322916666666666" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_personal_loans_list.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_personla_loan_details.xml" value="0.24322916666666666" />
-        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_reset_password.xml" value="0.33" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_second.xml" value="0.22" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_service_details.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/fragment_services.xml" value="0.25833333333333336" />
@@ -95,7 +106,7 @@
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/main_view_pager_item.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/my_spinner_background.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/my_spinner_item.xml" value="0.25833333333333336" />
-        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.33" />
+        <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/nav_header_navigation_drawer.xml" value="0.2" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/news_item.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/notification_item.xml" value="0.25833333333333336" />
         <entry key="..\:/smart_angle_projects/masrafna/masrafna/app/src/main/res/layout/services_grid_item.xml" value="0.33" />

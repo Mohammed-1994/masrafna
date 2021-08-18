@@ -127,6 +127,22 @@
     <string name="internal_remittances">الحوالات الداخلية RTGS</string>
     <string name="other_bank_services">خدمات مصرفية أخرى</string>
     <string name="banks_do">المصارف التي تقدم خدمة</string>
+    <string name="chose_bank">اختر المصرف الذي ترغب به</string>
+    <string name="see_bank_services">وتعرف على كافة الخدمات المقدمة من قبله</string>
+    <string name="about_the_bank">عن المصرف</string>
+    <string name="address">العنوان</string>
+    <string name="email">البريد الالكتروني</string>
+    <string name="contact_no">رقم التواصل</string>
+    <string name="website">الموقع الالكتروني</string>
+    <string name="access_token">access_token</string>
+    <string name="access_token_preferences">access_token_preferences</string>
+    <string name="enter">دخول</string>
+    <string name="logout_check">هل تريد بالتأكيد تسجيل الخروج</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="cancel">إلغاء</string>
+    <string name="forgot_password">نسيت كلمة المرور؟</string>
+    <string name="reset_password">إعادة تعيين كلمة المرور</string>
+    <string name="enter_your_phone">ادخل رقم الهاتف لتصلك رسالة التأكيد</string>
 
 
     <string-array name="planets_array">

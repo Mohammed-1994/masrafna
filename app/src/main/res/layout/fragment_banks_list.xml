@@ -1,14 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.navigation.banks.BanksListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/seach_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/edit_text_background"
+        android:orientation="horizontal">
+
+
+        <ImageButton
+            android:id="@+id/filter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="48dp"
+            android:layout_marginEnd="-48dp"
+            android:background="@null"
+            android:elevation="8dp"
+            android:src="@drawable/ic_baseline_search_24" />
+
+
+        <EditText
+            android:id="@+id/search_et"
+            style="@style/hint_font"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="56dp"
+            android:background="@null"
+            android:gravity="center"
+            android:hint="@string/search_banks"
+            android:inputType="text"
+            android:paddingVertical="8dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:textColor="@color/black" />
+
+        <ImageButton
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="-48dp"
+            android:layout_marginEnd="-48dp"
+            android:background="@null"
+            android:elevation="8dp"
+            android:src="@drawable/filter_search" />
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/chose_bank"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/seach_layout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/chose_bank"
+        style="@style/normal_font"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/chose_bank_text"
+        android:text="@string/see_bank_services"
+        style="@style/hint_font"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chose_bank"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/banks_rv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/chose_bank_text"
+        android:layout_marginTop="24dp"
+        tools:listitem="@layout/services_grid_item" />
+
+</RelativeLayout>
+</androidx.core.widget.NestedScrollView>

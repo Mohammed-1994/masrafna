@@ -20,7 +20,7 @@ class ServicesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = com.example.masrafna.databinding.ActivityServicesBinding.inflate(layoutInflater)
+        binding = ActivityServicesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navController = findNavController(R.id.nav_host_fragment_content_services_activity)
@@ -38,6 +38,7 @@ class ServicesActivity : AppCompatActivity() {
         binding.appBarActivityServices.toolbar.setNavigationOnClickListener {
             navController.navigateUp()
         }
+
     }
 
 

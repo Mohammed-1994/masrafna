@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ScrollView
 import androidx.core.os.bundleOf
 import androidx.core.view.allViews
 import androidx.navigation.fragment.findNavController
@@ -31,6 +32,8 @@ class AccountsTypeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
         val accounts = ArrayList<AccountModel>()
         accounts.add(AccountModel(0, getString(R.string.saving_account), "", ""))
         accounts.add(AccountModel(0, getString(R.string.fixed_deposit_accounts), "", ""))

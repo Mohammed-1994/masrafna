@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -36,7 +37,7 @@ class CardDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         super.onViewCreated(view, savedInstanceState)
         mContext = requireContext()
         getBanks()
-
+        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
         cardsModel = requireArguments().getParcelable("card")!!
 
         updateView()

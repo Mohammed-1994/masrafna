@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ScrollView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -38,6 +39,7 @@ class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         viewType = requireArguments().getInt("view_type")
 
 
+        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
         updateView()
         mContext = requireContext()
         getBanks()

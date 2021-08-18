@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragment_first"
-        android:name="com.example.masrafna.ui.fragments.spalsh.FirstFragment"
+        android:name="com.example.masrafna.ui.spalsh.FirstFragment"
         android:label="first"
         tools:layout="@layout/fragment_first">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_second"
-        android:name="com.example.masrafna.ui.fragments.spalsh.SecondFragment"
+        android:name="com.example.masrafna.ui.spalsh.SecondFragment"
         android:label="second"
         tools:layout="@layout/fragment_second">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_third"
-        android:name="com.example.masrafna.ui.fragments.spalsh.ThirdFragment"
+        android:name="com.example.masrafna.ui.spalsh.ThirdFragment"
         android:label="third"
         tools:layout="@layout/fragment_third">
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_fourth"
-        android:name="com.example.masrafna.ui.fragments.spalsh.FourthFragment"
+        android:name="com.example.masrafna.ui.spalsh.FourthFragment"
         android:label="fourth"
         tools:layout="@layout/fragment_fourth">
 

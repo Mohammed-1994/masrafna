@@ -50,6 +50,8 @@
 
     <style name="icons_font">
         <item name="android:fontFamily">@font/bahij_semibold</item>
+        <item name="android:textSize">18sp</item>
+
     </style>
 
     <style name="buttons">

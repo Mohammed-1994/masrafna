@@ -17,6 +17,13 @@
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_nav_home_to_nav_banksListFragment"
+            app:destination="@id/nav_banksListFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
     </fragment>
     <fragment
         android:id="@+id/nav_contact"
@@ -99,7 +106,28 @@
             app:argType="com.example.masrafna.data.models.NotificationModel"
             app:nullable="true" />
     </fragment>
-
+    <fragment
+        android:id="@+id/nav_banksListFragment"
+        android:name="com.example.masrafna.ui.navigation.banks.BanksListFragment"
+        android:label="@string/banks"
+        tools:layout="@layout/fragment_banks_list" >
+        <action
+            android:id="@+id/action_nav_banksListFragment_to_nav_bankDetailsFragment"
+            app:destination="@id/nav_bankDetailsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"/>
+    </fragment>
+    <fragment
+        android:id="@+id/nav_bankDetailsFragment"
+        android:name="com.example.masrafna.ui.navigation.banks.BankDetailsFragment"
+        tools:layout="@layout/fragment_bank_details" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.masrafna.ui.navigation.logout.LogoutFragment"
+        android:label="@string/logout"
+        tools:layout="@layout/fragment_logout" />
 
 
 </navigation>
