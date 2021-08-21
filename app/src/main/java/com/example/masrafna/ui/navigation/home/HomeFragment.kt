@@ -11,6 +11,8 @@ import android.view.ViewGroup
 import androidx.core.view.ViewCompat
 import com.example.masrafna.data.models.CardHomeFragmentModel
 import androidx.navigation.fragment.findNavController
+import androidx.viewpager2.widget.CompositePageTransformer
+import androidx.viewpager2.widget.MarginPageTransformer
 
 import androidx.viewpager2.widget.ViewPager2
 import androidx.viewpager2.widget.ViewPager2.ORIENTATION_HORIZONTAL
@@ -20,6 +22,7 @@ import com.example.masrafna.databinding.ActivityNavigationDrawerBinding
 import com.example.masrafna.databinding.FragmentHomeBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.ServicesActivity
+import kotlin.math.abs
 
 
 private const val TAG = "HomeFragment myTag"
@@ -142,22 +145,27 @@ class HomeFragment() : Fragment() {
         // dummy list models
         models = arrayListOf(
             CardHomeFragmentModel(
-                R.drawable.brochure,
+                R.drawable._30736ee2c2cfb6bce43bce2737d65c85,
                 "Brochure",
                 " this is information for this card"
             ),
             CardHomeFragmentModel(
-                R.drawable.sticker,
+                R.drawable._3764e9a41fff66432dfa4290f16ecd35,
                 "sticker",
                 " this is information for this card"
             ),
             CardHomeFragmentModel(
-                R.drawable.poster,
+                R.drawable.card__,
                 "poster",
                 " this is information for this card"
             ),
             CardHomeFragmentModel(
-                R.drawable.namecard,
+                R.drawable.card_,
+                "namecard",
+                " this is information for this card"
+            ),
+            CardHomeFragmentModel(
+                R.drawable.card___,
                 "namecard",
                 " this is information for this card"
             )
@@ -175,13 +183,13 @@ class HomeFragment() : Fragment() {
 
         with(binding.viewPager) {
 
-            adapter = viewPagerHomeFragmentAdapter
+
             clipToPadding = false
             clipChildren = false
             offscreenPageLimit = 3
             val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin)
             val offsetPx = resources.getDimensionPixelOffset(R.dimen.offset)
-            setPageTransformer { page, position ->
+            val tt = ViewPager2.PageTransformer { page, position ->
                 val viewPager = page.parent.parent as ViewPager2
                 val offset = position * -(2 * offsetPx + pageMarginPx)
                 if (viewPager.orientation == ORIENTATION_HORIZONTAL) {
@@ -196,6 +204,60 @@ class HomeFragment() : Fragment() {
             }
 
 
+            clipToPadding = false
+            clipChildren = false
+            offscreenPageLimit = 3
+            ViewPager2.PageTransformer { page, position ->
+                page.apply {
+                    translationY = abs(position) * 500f
+                    scaleX = 0.5f
+                    scaleY = 0.5f
+                }
+            }
+
+//            val marginPageTransformer = MarginPageTransformer(50)
+            setPageTransformer(CompositePageTransformer().also {
+                it.addTransformer(tt)
+//                it.addTransformer(marginPageTransformer)
+                it.addTransformer(ViewPager2PageTransformation())
+            })
+            adapter = viewPagerHomeFragmentAdapter
+        }
+    }
+
+    class ViewPager2PageTransformation : ViewPager2.PageTransformer {
+        override fun transformPage(page: View, position: Float) {
+            val absPos = Math.abs(position)
+            page.apply {
+
+                translationY = absPos * -70f
+
+                val pageMarginPx = resources.getDimensionPixelOffset(R.dimen.pageMargin)
+                val offsetPx = resources.getDimensionPixelOffset(R.dimen.offset)
+                val viewPager = page.parent.parent as ViewPager2
+                val offset = position * -(2 * offsetPx + pageMarginPx)
+                if (viewPager.orientation == ORIENTATION_HORIZONTAL) {
+                    if (ViewCompat.getLayoutDirection(viewPager) == ViewCompat.LAYOUT_DIRECTION_RTL) {
+                        page.translationX = -offset
+                    } else {
+                        page.translationX = offset
+                    }
+                } else {
+                    page.translationY = offset
+                }
+
+
+//                when {
+//                    position < -1 ->
+//                        page.alpha = 0.1f
+//                    position <= 1 -> {
+//                        page.alpha = Math.max(0.2f, 1 - Math.abs(position))
+//                    }
+//                    else -> page.alpha = 1f
+//                }
+
+
+            }
         }
     }
 }

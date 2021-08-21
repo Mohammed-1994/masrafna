@@ -66,10 +66,11 @@
             android:id="@+id/cancel_logout"
             style="@style/buttons"
             android:layout_width="0dp"
+
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_weight="1"
-            android:background="@drawable/ripple_background"
+            android:background="@drawable/ripple_button_background"
             android:text="@string/cancel"
 
             android:textColor="@color/black" />

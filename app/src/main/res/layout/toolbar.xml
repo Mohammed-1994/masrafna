@@ -3,7 +3,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="128dp"
-    android:background="@drawable/toolbar_back"
+    android:background="@drawable/profile_toolbar_back"
     android:elevation="8dp"
     android:padding="0dp"
     app:titleTextAppearance="@style/buttons"

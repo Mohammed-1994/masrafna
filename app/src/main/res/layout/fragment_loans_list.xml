@@ -6,60 +6,81 @@
     tools:context=".ui.services.loans_and_financing.LoansListFragment">
 
 
-    <LinearLayout
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/services_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignParentTop="true" />
+
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="48dp"
-        android:orientation="vertical"
-        android:paddingVertical="16dp">
+        android:layout_below="@id/toolbar">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/personal_loans1"
-            style="@style/normal_font"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/ripple_background"
-            android:paddingHorizontal="16dp"
-            android:drawableEnd="@drawable/go_icon"
-            android:layout_gravity="center"
-            android:gravity="start"
-            android:paddingVertical="16dp"
-            android:text="قرض أفراد 1" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/personal_loans2"
-            style="@style/normal_font"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/go_icon"
-            android:layout_gravity="center"
-            android:paddingHorizontal="16dp"
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/ripple_background"
-            android:gravity="start"
-            android:paddingVertical="16dp"
-            android:text="قرض أفراد 2" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginHorizontal="48dp"
+                android:paddingBottom="24dp"
+                android:layout_marginTop="48dp"
+                android:orientation="vertical"
+                android:paddingVertical="16dp">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/personal_loans3"
-            style="@style/normal_font"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/go_icon"
-            android:layout_gravity="center"
-            android:paddingHorizontal="16dp"
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/ripple_background"
-            android:gravity="start"
-            android:paddingVertical="16dp"
-            android:text="قرض أفراد 3" />
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/personal_loans1"
+                    style="@style/normal_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/ripple_button_background"
+                    android:drawableLeft="@drawable/go_arrow"
+                    android:gravity="start"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="قرض أفراد 1" />
 
-    </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/personal_loans2"
+                    style="@style/normal_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ripple_button_background"
+                    android:drawableLeft="@drawable/go_arrow"
+                    android:gravity="start"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="قرض أفراد 2" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/personal_loans3"
+                    style="@style/normal_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ripple_button_background"
+                    android:drawableLeft="@drawable/go_arrow"
+                    android:gravity="start"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="قرض أفراد 3" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

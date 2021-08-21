@@ -1,65 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
     android:id="@+id/scroll"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.services.localization.LocalizationFragment">
 
-    <RelativeLayout
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/services_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true" />
 
-        <ImageView
-            android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/localization" />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar">
 
-
-        <TextView
-            android:id="@+id/title"
-            style="@style/Titles_font"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/logo"
-            android:layout_centerHorizontal="true"
-            android:text="@string/localization" />
-
-
-        <TextView
-            android:id="@+id/localization_text"
-            style="@style/hint_font"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:paddingHorizontal="16dp"
-            android:text="@string/localization_text" />
-
-
-        <TextView
-            style="@style/Titles_font"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/banks_do_localization"
-            android:layout_below="@id/localization_text"
-            android:layout_marginTop="16dp"
-            android:gravity="center"
-            android:paddingHorizontal="16dp"
-            android:text="@string/banks_do_localization" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/banks_rv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/banks_do_localization"
             android:layout_marginTop="24dp"
-            tools:listitem="@layout/services_grid_item" />
-    </RelativeLayout>
+            android:layout_height="wrap_content">
 
-</androidx.core.widget.NestedScrollView>
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/localization" />
+
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Titles_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo"
+                android:layout_centerHorizontal="true"
+                android:text="@string/localization" />
+
+
+            <TextView
+                android:id="@+id/localization_text"
+                style="@style/hint_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="@string/localization_text" />
+
+
+            <TextView
+                android:id="@+id/banks_do_localization"
+                style="@style/Titles_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/localization_text"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:paddingHorizontal="16dp"
+                android:text="@string/banks_do_localization" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/banks_rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/banks_do_localization"
+                android:layout_marginTop="24dp"
+                tools:listitem="@layout/services_grid_item" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>

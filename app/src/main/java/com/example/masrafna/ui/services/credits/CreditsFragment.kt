@@ -9,6 +9,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.databinding.FragmentCreditsBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 
 
 class CreditsFragment : Fragment() {
@@ -18,7 +19,7 @@ class CreditsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
 
         binding = FragmentCreditsBinding.inflate(inflater, container, false)
         return binding.root
@@ -27,6 +28,7 @@ class CreditsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupToolbar()
 
         binding.documentaryCredits.setOnClickListener {
             val bundle = bundleOf("view_type" to documentary_credits)
@@ -44,6 +46,26 @@ class CreditsFragment : Fragment() {
             )
         }
 
+    }
+
+
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            toolbar.title.text = getString(R.string.external_funding)
+            toolbar.image.setImageResource(R.drawable.external_financing_dark_icon)
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
     }
 
 

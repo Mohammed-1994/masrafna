@@ -1,17 +1,23 @@
 package com.example.masrafna.ui.navigation.banks
 
+import android.app.ActionBar
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewGroup
+import android.widget.LinearLayout
+import android.widget.RelativeLayout
+import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.BankModel
 import com.example.masrafna.databinding.FragmentBanksListBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
 class BanksListFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
@@ -32,6 +38,7 @@ class BanksListFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setupToolbar()
         mContext = requireContext()
         getBanks()
         localizationListAdapter = LocalizationListAdapter(mContext!!, this)
@@ -45,47 +52,56 @@ class BanksListFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         }
     }
 
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
+    }
+
     private fun getBanks() {
 
 
         banksList = arrayListOf(
 
             BankModel(
-                "البنك المركزي ",
-                R.drawable.localization
+                "مصرف التجارة",
+                R.drawable.bank_image
             ),
             BankModel(
-                "بنك الرافدين ",
-                R.drawable.loans_and_financing
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                " البنك العراق الوطني",
-                R.drawable.deposit_accounts
+                "مصرف التجارة", R.drawable.bank_image
             ),
             BankModel(
-                "البنك العراقي ",
-                R.drawable.electronic_cards
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                " بنك جيهان",
-                R.drawable.letters_of_guarantee
+                "مصرف التجارة", R.drawable.bank_image
             ),
             BankModel(
-                "بنك الانتاج",
-                R.drawable.external_funding_icon
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                " بنك التنمية الزراعي",
-                R.drawable.western_union
+                "مصرف التجارة", R.drawable.bank_image
 
             ),
             BankModel(
-                "بنك التنمية الوطني",
-                R.drawable.online_banking_services
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                "بنك الوحدة",
-                R.drawable.other_services
+                "مصرف التجارة", R.drawable.bank_image
             )
 
         )

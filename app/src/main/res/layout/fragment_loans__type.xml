@@ -6,64 +6,86 @@
     tools:context=".ui.services.loans_and_financing.LoansTypeFragment">
 
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/loans_and_financing" />
-
-    <TextView
-        android:id="@+id/title"
-        style="@style/Titles_font"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/image"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="@string/bank_loans" />
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/services_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignParentTop="true" />
 
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title"
-        android:layout_marginHorizontal="48dp"
-        android:layout_marginTop="48dp"
-        android:orientation="vertical"
-        android:paddingVertical="16dp">
+        android:layout_below="@id/toolbar">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/personal"
-            style="@style/normal_font"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/ripple_background"
-            android:paddingHorizontal="16dp"
-            android:drawableEnd="@drawable/go_icon"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:paddingVertical="16dp"
-            android:text="@string/personal_loans" />
+            android:layout_height="wrap_content">
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/company"
-            style="@style/normal_font"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableEnd="@drawable/go_icon"
-            android:layout_gravity="center"
-            android:paddingHorizontal="16dp"
-            android:layout_margin="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/ripple_background"
-            android:gravity="center"
-            android:paddingVertical="16dp"
-            android:text="@string/company_loans" />
 
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/loans_and_financing" />
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/Titles_font"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:text="@string/bank_loans" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title"
+                android:layout_marginHorizontal="48dp"
+                android:layout_marginTop="48dp"
+                android:orientation="vertical"
+                android:paddingVertical="16dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/personal"
+                    style="@style/normal_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/ripple_button_background"
+                    android:drawableLeft="@drawable/go_arrow"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="@string/personal_loans" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/company"
+                    style="@style/normal_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/ripple_button_background"
+                    android:drawableLeft="@drawable/go_arrow"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="16dp"
+                    android:text="@string/company_loans" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
 </RelativeLayout>

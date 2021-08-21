@@ -9,6 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.data.models.NotificationModel
 import com.example.masrafna.databinding.FragmentNotificationsListBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 
 private const val TAG = "NotificationsFr myTag"
 
@@ -26,9 +27,30 @@ class NotificationsListFragment : Fragment(), NotificationAdapter.OnItemClickLis
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupToolbar()
         getArticles()
     }
 
+    private fun setupToolbar() {
+
+        with(binding) {
+
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            toolbar.title.text = getString(R.string.notifications)
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
+    }
 
     /**
      * request notifications from api for populate it

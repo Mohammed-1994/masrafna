@@ -48,7 +48,7 @@
     <string name="articles">مقالات الكترونية</string>
     <string name="articles_text">"من الشخصيات التي ساهمت في تطوير القطاع المصرفي العراقي والتي تقوم دائما بابتكار النماذج الجديدة لتطوير القطاع المصرفي اضافة الى المبادرات المستمرة التي تقدم الدعم المستمر لهذا القطاع "</string>
     <string name="contact">تواصل</string>
-    <string name="notifications">اشعارات</string>
+    <string name="notifications">الإشعارات</string>
     <string name="main">الرئيسية</string>
     <string name="profile">الصفحة الشخصية</string>
     <string name="name">الاسم</string>
@@ -94,7 +94,7 @@
     <string name="company_financing">تمويلات الشركات</string>
     <string name="personal_loans_financing">قروض وتمويلات الأفراد</string>
     <string name="electronic_cards">البطاقات الالكترونية</string>
-    <string name="debit_cards">البطاقات المدينة</string>
+    <string name="debit_cards">البطاقات المدينة (الدفع المباشر)</string>
     <string name="prepaid_cards">بطاقات الدفع المسبق</string>
     <string name="credit_card">بطاقات دائنة</string>
     <string name="banks_do_cards">المصارف التي تقدم خدمة البطاقات الالكترونية</string>
@@ -115,7 +115,7 @@
     <string name="western_union">الويسترن يونيون</string>
     <string name="banks_do_western_union">المصارف التي تقدم الحوالات عن طريق الويسترن يونيون</string>
     <string name="transfer_via_western_union">التحويل عن طريق ويسترن يونيون</string>
-    <string name="online_service">خدمات مصرفية عبر الانترنت</string>
+    <string name="online_service">الخدمات المصرفية عبر الانترنت</string>
     <string name="banks_do_online_service">المصارف التي تقدم خدمات عبر الانترنت</string>
     <string name="other_services_from_banks">خدمات مصرفية مقدمة من المصارف العراقية</string>
     <string name="ratified_instruments">الصكوك المصدقة والسفاتج</string>
@@ -144,6 +144,7 @@
     <string name="reset_password">إعادة تعيين كلمة المرور</string>
     <string name="enter_your_phone">ادخل رقم الهاتف لتصلك رسالة التأكيد</string>
     <string name="back">رجوع</string>
+    <string name="contact_info">معلومات التواصل</string>
 
 
     <string-array name="planets_array">

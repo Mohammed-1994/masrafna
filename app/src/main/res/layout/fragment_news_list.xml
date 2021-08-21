@@ -7,9 +7,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.navigation.news.NewsListFragment">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:layout_alignParentTop="true" />
+
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="48dp"
         android:id="@+id/news_rv"
+        android:layout_below="@id/toolbar"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

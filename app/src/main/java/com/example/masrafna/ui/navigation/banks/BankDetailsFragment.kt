@@ -47,8 +47,9 @@ class BankDetailsFragment : Fragment(), BankServicesAdapter.OnBankClicked {
         mContext = requireContext()
         getBankServices()
 
+        setupToolbar()
 
-        binding.title.text = "${binding.title.text} $title"
+        binding.titleTv.text = "${binding.titleTv.text} $title"
 
         bankServicesAdapter = BankServicesAdapter(mContext!!, this)
 
@@ -57,6 +58,26 @@ class BankDetailsFragment : Fragment(), BankServicesAdapter.OnBankClicked {
             adapter = bankServicesAdapter
             layoutManager = GridLayoutManager(requireContext(), 2)
 
+        }
+    }
+
+
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            toolbar.image.visibility = View.GONE
+            toolbar.title.text = title
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
         }
     }
 

@@ -1,12 +1,14 @@
 package com.example.masrafna.ui.services.localization
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.masrafna.data.models.BankModel
 import com.example.masrafna.databinding.BankItemBinding
 
+private const val TAG = "LocalizationListAdapter myTag"
 class LocalizationListAdapter(val context: Context, private val bankClicked: OnBankClicked) :
     RecyclerView.Adapter<LocalizationListAdapter.LocalizationViewHolder>() {
 
@@ -32,7 +34,7 @@ class LocalizationListAdapter(val context: Context, private val bankClicked: OnB
             binding.image.setImageResource(currentBank.image)
             binding.title.text = currentBank.title
 
-            binding.root.setOnClickListener {
+            binding.card.setOnClickListener {
                 bankClicked.onClick(currentBank)
             }
         }

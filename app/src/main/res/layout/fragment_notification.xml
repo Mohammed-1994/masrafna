@@ -1,67 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="8dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ui.navigation.notifications.NotificationFragment">
 
-    <RelativeLayout
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/services_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="48dp">
+        android:layout_height="128dp"
+        android:layout_alignParentTop="true" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card"
+    <androidx.core.widget.NestedScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:cardCornerRadius="20dp">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="48dp">
 
-            <ImageView
-                android:id="@+id/image"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/brochure" />
+                app:cardCornerRadius="20dp">
 
-        </androidx.cardview.widget.CardView>
+                <ImageView
+                    android:id="@+id/notification_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/brochure" />
 
-
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/card"
-            style="@style/normal_font"
-            android:gravity="center"
-            android:text="@string/banks"
-            android:textColor="@color/black"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/date"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/title"
-            style="@style/hint_font"
-            android:gravity="center"
-            android:text="13/6/1994"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/desc"
-            style="@style/hint_font"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/date"
-            android:gravity="center"
-            android:text="@string/see_iraqi_banks"
-            android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
 
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/title_tv"
+                style="@style/normal_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card"
+                android:gravity="center"
+                android:text="@string/banks"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
 
-</androidx.core.widget.NestedScrollView>
+            <TextView
+                android:id="@+id/date"
+                style="@style/hint_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_tv"
+                android:gravity="center"
+                android:text="13/6/1994"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/desc"
+                style="@style/hint_font"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/date"
+                android:gravity="center"
+                android:text="@string/see_iraqi_banks"
+                android:textStyle="bold" />
+
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

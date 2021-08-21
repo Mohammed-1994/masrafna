@@ -14,6 +14,7 @@ import com.example.masrafna.R
 import com.example.masrafna.data.models.AccountModel
 import com.example.masrafna.data.models.BankModel
 import com.example.masrafna.databinding.FragmentAccountDetailsBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 import com.example.masrafna.util.NoOfColumns
 
@@ -38,11 +39,7 @@ class AccountDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked
         mContext = requireContext()
         getBanks()
 
-        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
-        accountModel = requireArguments().getParcelable("account")!!
-
-        updateView()
-
+        setupToolbar()
         localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
         binding.banksRv.apply {
@@ -51,11 +48,21 @@ class AccountDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked
             layoutManager = GridLayoutManager(requireContext(), 2)
         }
     }
+    private fun setupToolbar() {
 
-    private fun updateView() {
         with(binding) {
-            title.text = accountModel.title
-            banksDoAccounts.text = "المصارف التي تقدم ${accountModel.title}"
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            toolbar.title.visibility = View.GONE
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
         }
     }
 
@@ -65,41 +72,33 @@ class AccountDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked
         banksList = arrayListOf(
 
             BankModel(
-                mContext!!.getString(R.string.localization_id),
-                R.drawable.localization
+                "مصرف التجارة",
+                R.drawable.bank_image
             ),
             BankModel(
-                mContext!!.getString(R.string.loans_and_financing_id),
-                R.drawable.loans_and_financing
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.deposit_accounts_id),
-                R.drawable.deposit_accounts
+                "مصرف التجارة", R.drawable.bank_image
             ),
             BankModel(
-                mContext!!.getString(R.string.electronic_cards_id),
-                R.drawable.electronic_cards
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.letters_of_guarantee_id),
-                R.drawable.letters_of_guarantee
+                "مصرف التجارة", R.drawable.bank_image
             ),
             BankModel(
-                mContext!!.getString(R.string.external_funding_icon_id),
-                R.drawable.external_funding_icon
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.western_union_id),
-                R.drawable.western_union
+                "مصرف التجارة", R.drawable.bank_image
 
             ),
             BankModel(
-                mContext!!.getString(R.string.online_banking_services_id),
-                R.drawable.online_banking_services
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.other_services_id),
-                R.drawable.other_services
+                "مصرف التجارة", R.drawable.bank_image
             )
 
         )

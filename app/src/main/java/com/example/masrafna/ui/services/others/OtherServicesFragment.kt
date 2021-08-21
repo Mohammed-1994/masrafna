@@ -12,6 +12,7 @@ import androidx.core.view.iterator
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.databinding.FragmentOtherServicesBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 
 class OtherServicesFragment : Fragment() {
 
@@ -20,7 +21,7 @@ class OtherServicesFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentOtherServicesBinding.inflate(inflater, container, false)
         return binding.root
 
@@ -30,7 +31,7 @@ class OtherServicesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
+        setupToolbar()
         val buttonClicked = View.OnClickListener {
             val title = (it as Button).text
             val bundle = bundleOf("id" to title)
@@ -46,5 +47,23 @@ class OtherServicesFragment : Fragment() {
         }
     }
 
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            toolbar.title.text = getString(R.string.other_bank_services)
+            toolbar.image.setImageResource(R.drawable.other_services_dark_icon)
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
+    }
 
 }

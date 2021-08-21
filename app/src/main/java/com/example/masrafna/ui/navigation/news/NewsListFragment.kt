@@ -14,6 +14,7 @@ import com.example.masrafna.data.models.NewsModel
 import com.example.masrafna.data.models.NotificationModel
 import com.example.masrafna.databinding.FragmentNewsBinding
 import com.example.masrafna.databinding.FragmentNewsListBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.navigation.notifications.NotificationAdapter
 
 private const val TAG = "NewsListFragment myTag"
@@ -33,9 +34,31 @@ class NewsListFragment : Fragment(), NewsAdapter.OnItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        setupToolbar()
         getArticles()
 
+    }
+
+
+    private fun setupToolbar() {
+
+        with(binding) {
+
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+
+            toolbar.title.text = getString(R.string.news)
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
     }
 
     /**

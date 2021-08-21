@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.masrafna.R
 import com.example.masrafna.data.models.BankModel
 import com.example.masrafna.databinding.FragmentCreditsTypeBinding
+import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.credits.CreditsFragment.Companion.documentary_credits
 import com.example.masrafna.ui.services.credits.CreditsFragment.Companion.external_remittances
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
@@ -38,8 +39,7 @@ class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         super.onViewCreated(view, savedInstanceState)
         viewType = requireArguments().getInt("view_type")
 
-
-        binding.scroll.fullScroll(ScrollView.FOCUS_UP)
+        setupToolbar()
         updateView()
         mContext = requireContext()
         getBanks()
@@ -54,18 +54,37 @@ class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         }
     }
 
+
+    private fun setupToolbar() {
+
+        with(binding) {
+            toolbar.drawerIcon.setOnClickListener {
+                (requireContext() as NavigationDrawerActivity)
+                    .binding.drawerLayout.open()
+            }
+            toolbar.navigateUp.setOnClickListener {
+                findNavController().navigateUp()
+            }
+            toolbar.title.visibility = View.GONE
+
+            if (!resources.getBoolean(R.bool.is_right_to_left)) {
+                toolbar.navigateUp.rotation = 180f
+            }
+        }
+    }
+
     private fun updateView() {
         when (viewType) {
             documentary_credits -> {
                 with(binding) {
-                    title.text = getString(R.string.documentary_credits)
+                    titleTv.text = getString(R.string.documentary_credits)
                     banksDoCredits.text = "المصارف التي تقدم الاعتمادات المستندية"
                 }
 
             }
             external_remittances -> {
                 with(binding) {
-                    title.text = getString(R.string.external_remittances)
+                    titleTv.text = getString(R.string.external_remittances)
                     banksDoCredits.text = "المصارف التي تقدم الحوالات الخارجية"
                 }
 
@@ -81,41 +100,33 @@ class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         banksList = arrayListOf(
 
             BankModel(
-                mContext!!.getString(R.string.localization_id),
-                R.drawable.localization
+                "مصرف التجارة",
+                R.drawable.bank_image
             ),
             BankModel(
-                mContext!!.getString(R.string.loans_and_financing_id),
-                R.drawable.loans_and_financing
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.deposit_accounts_id),
-                R.drawable.deposit_accounts
+                "مصرف التجارة", R.drawable.bank_image
             ),
             BankModel(
-                mContext!!.getString(R.string.electronic_cards_id),
-                R.drawable.electronic_cards
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.letters_of_guarantee_id),
-                R.drawable.letters_of_guarantee
+                "مصرف التجارة", R.drawable.bank_image
             ),
             BankModel(
-                mContext!!.getString(R.string.external_funding_icon_id),
-                R.drawable.external_funding_icon
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.western_union_id),
-                R.drawable.western_union
+                "مصرف التجارة", R.drawable.bank_image
 
             ),
             BankModel(
-                mContext!!.getString(R.string.online_banking_services_id),
-                R.drawable.online_banking_services
+                "مصرف الرافدين", R.drawable.bank_image2
             ),
             BankModel(
-                mContext!!.getString(R.string.other_services_id),
-                R.drawable.other_services
+                "مصرف التجارة", R.drawable.bank_image
             )
 
         )

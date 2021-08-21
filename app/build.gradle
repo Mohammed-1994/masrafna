@@ -91,5 +91,4 @@ dependencies {
     //custom-progress-dialog
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
-
 }
