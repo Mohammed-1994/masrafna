@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/splash_nav"
-    app:startDestination="@id/fragment_first">
+    app:startDestination="@id/nav_viewPagerFragment">
 
     <fragment
         android:id="@+id/fragment_first"
-        android:name="com.example.masrafna.ui.spalsh.FirstFragment"
+        android:name="com.example.masrafna.ui.onboarding.FirstFragment"
         android:label="first"
         tools:layout="@layout/fragment_first">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_second"
-        android:name="com.example.masrafna.ui.spalsh.SecondFragment"
+        android:name="com.example.masrafna.ui.onboarding.SecondFragment"
         android:label="second"
         tools:layout="@layout/fragment_second">
         <action
@@ -33,7 +33,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_third"
-        android:name="com.example.masrafna.ui.spalsh.ThirdFragment"
+        android:name="com.example.masrafna.ui.onboarding.ThirdFragment"
         android:label="third"
         tools:layout="@layout/fragment_third">
         <action
@@ -46,10 +46,15 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_fourth"
-        android:name="com.example.masrafna.ui.spalsh.FourthFragment"
+        android:name="com.example.masrafna.ui.onboarding.FourthFragment"
         android:label="fourth"
         tools:layout="@layout/fragment_fourth">
 
     </fragment>
+    <fragment
+        android:id="@+id/nav_viewPagerFragment"
+        android:name="com.example.masrafna.ui.onboarding.ViewPagerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/fragment_view_pager" />
 
 </navigation>

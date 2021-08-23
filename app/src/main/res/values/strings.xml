@@ -145,6 +145,9 @@
     <string name="enter_your_phone">ادخل رقم الهاتف لتصلك رسالة التأكيد</string>
     <string name="back">رجوع</string>
     <string name="contact_info">معلومات التواصل</string>
+    <string name="first_time_preference">first time preference</string>
+    <string name="first_time_finished">first time finished</string>
+    <string name="is_account_verified">is account verified</string>
 
 
     <string-array name="planets_array">

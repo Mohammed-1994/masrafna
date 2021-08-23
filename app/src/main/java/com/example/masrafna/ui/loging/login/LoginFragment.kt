@@ -7,26 +7,58 @@ import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.api.MainAPIClient
-import com.example.masrafna.data.auth.request.LoginModel
+import com.example.masrafna.data.auth.request.LoginBody
 import com.example.masrafna.data.auth.response.LoginResponse
 import com.example.masrafna.databinding.FragmentLoginBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.util.Session
 import com.google.android.material.snackbar.Snackbar
-import io.reactivex.schedulers.Schedulers
-import retrofit2.HttpException
+import androidx.appcompat.app.AppCompatActivity
+
+import android.app.DownloadManager
+import com.example.masrafna.api.NetworkStatus
+import com.example.masrafna.api.Status
+
 
 private const val TAG = "LoginFragment myTag"
 
 class LoginFragment : Fragment() {
-    private val mainInterface = MainAPIClient.getClient()
+
+
     private lateinit var binding: FragmentLoginBinding
+    private val loginViewModel: LoginViewModel by viewModels()
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        loginViewModel.networkStatus.observe(this, {
+            binding.progressBar.visibility =
+                if (it == NetworkStatus.LOADING) VISIBLE else GONE
+
+            if (it.status == Status.CODE_422) {
+                Snackbar.make(
+                    binding.root,
+                    it.msg,
+                    Snackbar.LENGTH_LONG
+                )
+                    .show()
+            }
+        })
+
+        loginViewModel.loginResponse.observe(this, {
+            updateUi(it)
+        })
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -65,64 +97,41 @@ class LoginFragment : Fragment() {
 
     private fun login() {
         binding.progressBar.visibility = VISIBLE
-        val loginModel = LoginModel(
+        val loginBody = LoginBody(
             password = binding.passwordEt.text.toString().trim(),
             phone = binding.phoneNoEt.text.toString().trim()
         )
-        mainInterface.login(loginModel)
-            .subscribeOn(Schedulers.io())
-            .subscribe(
-                {
-                    activity?.runOnUiThread {
-                        binding.progressBar.visibility = View.GONE
-                    }
-                    if (it.error) {
-                        Snackbar.make(
-                            binding.root,
-                            it.message, Snackbar.LENGTH_LONG
-                        )
-                            .show()
-                    } else
-                        loginSuccessful(it)
-                },
-                {
-                    activity?.runOnUiThread {
-                        binding.progressBar.visibility = View.GONE
-                    }
-                    Log.e(TAG, "checkTheCode: Error", it)
-                    if (it is HttpException) {
-                        if (it.code() == 422) {
-                            Snackbar.make(
-                                binding.root,
-                                "الرجاء التأكد من رقم الهاتف وكلمة المرور", Snackbar.LENGTH_LONG
-                            )
-                                .show()
-                        }
 
-                    }
-                })
+        loginViewModel.login(loginBody)
     }
 
-    private fun loginSuccessful(response: LoginResponse?) {
-        with(Session) {
-            if (response != null) {
-                token = response.payload.accessToken.token
+    private fun updateUi(response: LoginResponse?) {
+        binding.progressBar.visibility = GONE
+        if (response != null) {
+
+            with(Session) {
+
+
                 loginResponse = response
+
+                val sharedPref = activity?.getSharedPreferences(
+                    getString(R.string.access_token_preferences), Context.MODE_PRIVATE
+                ) ?: return
+                with(sharedPref.edit()) {
+                    putString(
+                        getString(R.string.access_token),
+                        response.payload.accessToken.token
+                    )
+                    apply()
+                }
+                requireContext().startActivity(
+                    Intent(requireContext(), NavigationDrawerActivity::class.java)
+                )
+                requireActivity().finish()
             }
         }
-
-        val sharedPref = activity?.getSharedPreferences(
-            getString(R.string.access_token_preferences), Context.MODE_PRIVATE
-        ) ?: return
-        with(sharedPref.edit()) {
-            putString(getString(R.string.access_token), response!!.payload.accessToken.token)
-            apply()
-        }
-        requireContext().startActivity(
-            Intent(requireContext(), NavigationDrawerActivity::class.java)
-        )
-        requireActivity().finish()
     }
+
 
     private fun checkAuth() {
 
@@ -131,23 +140,31 @@ class LoginFragment : Fragment() {
         ) ?: return
 
         val token = sharedPref.getString(getString(R.string.access_token), null)
+        Session.token = token.toString()
+        val isVerified = sharedPref.getBoolean(getString(R.string.is_account_verified), false)
         if (token != null) {
-            startActivity(Intent(requireContext(), NavigationDrawerActivity::class.java))
-            requireActivity().finish()
+            Log.d(TAG, "checkAuth: $token")
 
+            if (isVerified) {
+                Log.d(TAG, "checkAuth: is verified")
+                startActivity(Intent(requireContext(), NavigationDrawerActivity::class.java))
+                requireActivity().finish()
+            } else {
+
+                Log.d(TAG, "checkAuth: is not verified")
+                findNavController().navigate(R.id.action_nav_login_to_nav_confirmCodeFragment)
+            }
         }
     }
 
     /**
      * checks if the phone number and password are not empty
      */
-
     private fun checkInputs(): Boolean {
         return !(binding.passwordEt.text.toString().isEmpty()
                 || binding.passwordEt.text.toString().isEmpty()
                 )
 
     }
-
 
 }

@@ -5,7 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 
 @Parcelize
-data class SignUpModel(
+data class SignUpBody(
     var name: String? = null,
     var phone: String? = null,
     var password: String? = null

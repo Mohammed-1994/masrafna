@@ -17,6 +17,11 @@
             app:popEnterAnim="@anim/from_right"
             app:popExitAnim="@anim/to_left"
             app:destination="@id/nav_resetPasswordFragment" />
+        <action
+            android:id="@+id/action_nav_login_to_nav_confirmCodeFragment"
+            app:popUpTo="@+id/nav_confirmCodeFragment"
+            app:popUpToInclusive="true"
+            app:destination="@id/nav_confirmCodeFragment" />
     </fragment>
 
     <fragment
@@ -62,7 +67,14 @@
         tools:layout="@layout/fragment_welcome" />
     <fragment
         android:id="@+id/nav_resetPasswordFragment"
-        android:name="com.example.masrafna.ui.loging.login.ResetPasswordFragment"
+        android:name="com.example.masrafna.ui.loging.reset_pass.ResetPasswordFragment"
         android:label="@string/reset_password"
-        tools:layout="@layout/fragment_reset_password" />
+        tools:layout="@layout/fragment_reset_password" >
+        <action
+            android:id="@+id/action_nav_resetPasswordFragment_to_nav_login"
+            app:destination="@id/nav_login"
+            app:popUpTo="@+id/nav_login"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
 </navigation>

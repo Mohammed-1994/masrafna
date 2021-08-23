@@ -4,6 +4,7 @@ import com.example.masrafna.data.auth.request.*
 import com.example.masrafna.data.auth.response.*
 import com.example.masrafna.data.auth.response.ResetPasswordResponse
 import io.reactivex.Single
+import retrofit2.Call
 import retrofit2.http.*
 
 interface MainInterface {
@@ -12,13 +13,13 @@ interface MainInterface {
 
     @POST("auth/signup")
     fun signup(
-        @Body signUpModel: SignUpModel,
+        @Body signUpBody: SignUpBody,
     ): Single<SignupResponse>
 
 
     @POST("auth/signup/verify_otp")
     fun verifyOTP(
-        @Body otp: VerifyOTPModel
+        @Body otp: VerifyOTPBody
     ): Single<VerifyOTPResponse>
 
     @GET("auth/signup/resend_otp")
@@ -28,7 +29,7 @@ interface MainInterface {
 
     @POST("auth/login")
     fun login(
-        @Body loginModel: LoginModel,
+        @Body loginBody: LoginBody,
     ): Single<LoginResponse>
 
 
@@ -53,6 +54,11 @@ interface MainInterface {
         @Body phone: ChangPassword
     ): Single<ResetPasswordVerifyOTP>
 
+
+  @POST("auth/change_password")
+    fun changePassword(
+        @Body password: ChagnePasswordBody
+    ): Single<ChangePasswordResponse>
 
     /****  End Auth methods  ***/
 

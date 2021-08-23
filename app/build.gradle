@@ -91,4 +91,9 @@ dependencies {
     //custom-progress-dialog
     implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
+
+    //gson converter
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+
 }

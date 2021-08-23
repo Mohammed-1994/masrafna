@@ -9,17 +9,30 @@ import android.view.View
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
 import com.example.masrafna.api.MainAPIClient
 import com.example.masrafna.databinding.FragmentLogoutBinding
 import com.example.masrafna.ui.loging.LoggingActivity
+import com.example.masrafna.ui.loging.signup.SignupViewModel
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import io.reactivex.schedulers.Schedulers
 
 class LogoutFragment : Fragment() {
-    private val mainInterface = MainAPIClient.getClient()
+
+    private val signupViewModel: SignupViewModel by viewModels()
+
     private lateinit var binding: FragmentLogoutBinding
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        signupViewModel.logoutResponse.observe(this, {
+            logout()
+        })
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -36,32 +49,26 @@ class LogoutFragment : Fragment() {
         }
 
         binding.confirmLogout.setOnClickListener {
-            binding.progressBar.visibility = VISIBLE
-            logout()
+            signupViewModel.logout()
+
         }
     }
 
     private fun logout() {
-        mainInterface.logout()
-            .subscribeOn(Schedulers.io())
-            .subscribe(
-                {
-                    clearToken()
-                },
-                {
-                    clearToken()
-                })
-    }
-
-    private fun clearToken() {
 
         val sharedPref = activity?.getSharedPreferences(
             getString(R.string.access_token_preferences), Context.MODE_PRIVATE
         ) ?: return
 
         val token = sharedPref.getString(getString(R.string.access_token), null)
-        if (token != null) {
-            sharedPref.edit().remove(getString(R.string.access_token)).apply()
+
+
+        with(sharedPref.edit()) {
+            if (token != null)
+                remove(getString(R.string.access_token))
+            putBoolean(getString(R.string.is_account_verified), false)
+
+            apply()
         }
 
         requireContext().startActivity(
@@ -69,7 +76,6 @@ class LogoutFragment : Fragment() {
         )
         activity?.runOnUiThread {
             binding.progressBar.visibility = GONE
-
         }
         requireActivity().finish()
 

@@ -1,4 +1,4 @@
-package com.example.masrafna.ui.spalsh
+package com.example.masrafna.ui.onboarding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

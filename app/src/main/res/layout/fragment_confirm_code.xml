@@ -10,6 +10,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <ImageButton
+            android:id="@+id/log_out"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="@android:color/transparent"
+            android:rotation="180"
+            android:src="@drawable/ic_baseline_exit_to_app_24" />
 
         <com.github.ybq.android.spinkit.SpinKitView
             android:id="@+id/progress_bar"
@@ -36,26 +49,26 @@
             android:id="@+id/create_new_account"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/Titles_font"
             android:layout_below="@+id/logo"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:text="@string/confirm_the_code"
-            android:textColor="@color/black"
 
-            android:textStyle="bold" />
+            android:textStyle="bold"
+
+            android:theme="@style/Titles_font" />
 
 
         <TextView
             android:id="@+id/text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:theme="@style/hint_font"
             android:layout_below="@+id/create_new_account"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="48dp"
             android:layout_marginBottom="24dp"
-            android:text="@string/confirm_the_code_sent" />
+            android:text="@string/confirm_the_code_sent"
+            android:theme="@style/hint_font" />
 
 
         <EditText
