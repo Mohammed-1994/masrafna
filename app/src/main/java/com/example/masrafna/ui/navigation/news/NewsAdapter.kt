@@ -4,7 +4,6 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.masrafna.data.models.NewsModel
 import com.example.masrafna.databinding.NewsItemBinding
 
 class NewsAdapter(val context: Context, val clickListener: OnItemClickListener) :

@@ -27,10 +27,10 @@ class NotificationFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        val notification = arguments?.getParcelable<NotificationModel>("notification")
 
         setupToolbar()
-        showNotificationDetails(notification)
+
+
     }
     private fun setupToolbar() {
 
@@ -50,12 +50,12 @@ class NotificationFragment : Fragment() {
     }
 
     private fun showNotificationDetails(notification: NotificationModel?) {
-        if (notification != null) {
-            binding.date.text = notification.date
-            binding.titleTv.text = notification.title
-            binding.desc.text = notification.desc
-            binding.notificationImage.setImageResource(notification.image)
-        }
+//        if (notification != null) {
+//            binding.date.text = notification.date
+//            binding.titleTv.text = notification.title
+//            binding.desc.text = notification.desc
+//            binding.notificationImage.setImageResource(notification.image)
+//        }
     }
 
 }

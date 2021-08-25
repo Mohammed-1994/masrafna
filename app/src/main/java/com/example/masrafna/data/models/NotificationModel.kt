@@ -1,13 +1,27 @@
 package com.example.masrafna.data.models
 
-import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
 
+import com.google.gson.annotations.SerializedName
+import java.util.*
 
-@Parcelize
 data class NotificationModel(
-    var image: Int = 0,
-    var title: String? = null,
-    var desc: String? = null,
-    var date: String? = null
-) : Parcelable
+    @SerializedName("error")
+    val error: Boolean,
+    @SerializedName("message")
+    val message: String,
+    @SerializedName("payload")
+    val notifications: List<Notifications>
+) {
+    data class Notifications(
+        @SerializedName("created_at")
+        val createdAt: Date,
+        @SerializedName("id")
+        val id: String,
+        @SerializedName("image")
+        val image: String,
+        @SerializedName("text")
+        val text: String,
+        @SerializedName("title")
+        val title: String
+    )
+}

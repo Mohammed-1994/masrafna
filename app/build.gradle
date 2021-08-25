@@ -71,6 +71,9 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
 
+    //
+    implementation 'jp.wasabeef:glide-transformations:4.3.0'
+
 
     //retrofit
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
@@ -95,5 +98,8 @@ dependencies {
     //gson converter
     implementation 'com.google.code.gson:gson:2.8.6'
 
+
+    //time formatter string
+    implementation 'org.ocpsoft.prettytime:prettytime:4.0.4.Final'
 
 }

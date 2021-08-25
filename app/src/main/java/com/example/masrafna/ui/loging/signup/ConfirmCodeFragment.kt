@@ -124,24 +124,10 @@ class ConfirmCodeFragment : Fragment() {
 
     private fun updateUi(response: VerifyOTPResponse?) {
         if (response != null) {
-
-            with(Session) {
-
-                verifyOTPResponse = response
-            }
-            val sharedPref = activity?.getSharedPreferences(
-                getString(R.string.access_token_preferences), Context.MODE_PRIVATE
-            ) ?: return
-            with(sharedPref.edit()) {
-                putBoolean(getString(R.string.is_account_verified), true)
-                apply()
-            }
-            activity?.runOnUiThread {
-                findNavController().navigate(R.id.action_nav_confirmCodeFragment_to_nav_welcomeFragment)
-            }
+            Session.verifyOTPResponse = response
+            findNavController().navigate(R.id.action_nav_confirmCodeFragment_to_nav_welcomeFragment)
         }
     }
-
 
     private fun logout() {
 
@@ -155,8 +141,6 @@ class ConfirmCodeFragment : Fragment() {
         with(sharedPref.edit()) {
             if (token != null)
                 remove(getString(R.string.access_token))
-            putBoolean(getString(R.string.is_account_verified), false)
-
             apply()
         }
 
@@ -167,8 +151,6 @@ class ConfirmCodeFragment : Fragment() {
             binding.progressBar.visibility = GONE
         }
         requireActivity().finish()
-
-
     }
 
 

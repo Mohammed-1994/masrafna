@@ -5,9 +5,13 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
+import com.example.masrafna.api.NetworkStatus
 import com.example.masrafna.data.models.ServicesModel
 import com.example.masrafna.databinding.FragmentInfoBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
@@ -18,14 +22,28 @@ class InfoFragment : Fragment() {
     private lateinit var binding: FragmentInfoBinding
     private var mContext: Context? = null
 
-    private var servicesList = ArrayList<ServicesModel>()
-    private lateinit var adapter: ServicesGridAdapter
+    private val infoViewModel: InfoViewModel by viewModels()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        with(infoViewModel){
+            networkStatus.observe(this@InfoFragment){
+                binding.progressBar.visibility =
+                    if (it == NetworkStatus.LOADING) VISIBLE else GONE
+            }
+
+            aboutResponse.observe(this@InfoFragment,{
+                if (it != null)
+                binding.text.text = it.payload.text
+            })
+
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = FragmentInfoBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -34,6 +52,8 @@ class InfoFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         mContext = requireContext()
         setupToolbar()
+
+        infoViewModel.getInfo()
     }
 
     private fun setupToolbar() {

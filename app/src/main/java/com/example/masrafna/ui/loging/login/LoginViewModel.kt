@@ -6,10 +6,8 @@ import com.example.masrafna.api.MainAPIClient
 import com.example.masrafna.api.NetworkStatus
 import com.example.masrafna.data.auth.request.LoginBody
 import com.example.masrafna.data.auth.response.LoginResponse
-import com.example.masrafna.data.auth.response.SignupResponse
-import com.example.masrafna.ui.loging.signup.SignupRepo
+import com.example.masrafna.data.profile.response.ProfileResponse
 import io.reactivex.disposables.CompositeDisposable
-import kotlin.math.log
 
 class LoginViewModel : ViewModel() {
     private var loginRepo: LoginRepo
@@ -33,6 +31,14 @@ class LoginViewModel : ViewModel() {
 
     fun login(loginBody: LoginBody) {
         loginRepo.login(loginBody)
+    }
+
+    val profileResponse: LiveData<ProfileResponse?> by lazy {
+        loginRepo.profileResponse
+    }
+
+    fun getProfile() {
+        loginRepo.getProfile()
     }
 
     override fun onCleared() {

@@ -1,7 +1,6 @@
 package com.example.masrafna.ui.navigation.news
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,6 @@ import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.masrafna.R
-import com.example.masrafna.data.models.NewsModel
 import com.example.masrafna.databinding.FragmentNewsBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 

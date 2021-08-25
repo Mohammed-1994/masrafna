@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.navigation.terms.TermsFragment">
 
 
@@ -25,6 +26,16 @@
             android:padding="16dp"
             android:layout_marginTop="48dp">
 
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress_bar"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:elevation="16dp"
+                android:visibility="gone"
+                app:SpinKit_Color="#01BBFC" />
             <TextView
                 android:id="@+id/first"
                 style="@style/normal_font"

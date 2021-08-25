@@ -1,19 +1,25 @@
 package com.example.masrafna.ui.navigation.notifications
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
-import com.example.masrafna.data.models.NewsModel
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.example.masrafna.R
 import com.example.masrafna.data.models.NotificationModel
 import com.example.masrafna.databinding.NotificationItemBinding
-import com.example.masrafna.ui.navigation.news.NewsAdapter
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
+import org.ocpsoft.prettytime.PrettyTime
+
+private const val TAG = "NotificationAdapter myTag"
 
 class NotificationAdapter(val context: Context, private val clickListener: OnItemClickListener) :
     RecyclerView.Adapter<NotificationAdapter.NotificationViewHolder>() {
 
-    private var notificationList = ArrayList<NotificationModel>()
+    private lateinit var notificationList: List<NotificationModel.Notifications>
 
     inner class NotificationViewHolder(val binding: NotificationItemBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -37,11 +43,17 @@ class NotificationAdapter(val context: Context, private val clickListener: OnIte
                 clickListener.onItemClicked(currentNotification)
             }
 
-            binding.date.text = currentNotification.date
             binding.title.text = currentNotification.title
-            binding.desc.text = currentNotification.desc
-            binding.image.setImageResource(currentNotification.image)
+            binding.desc.text = currentNotification.text
 
+            Glide.with(context)
+
+                .load(currentNotification.image)
+                .placeholder(R.drawable.sticker)
+                .into(binding.image)
+
+            val date = PrettyTime().format(currentNotification.createdAt)
+            binding.date.text = date
 
         }
 
@@ -52,13 +64,13 @@ class NotificationAdapter(val context: Context, private val clickListener: OnIte
         return notificationList.size
     }
 
-    fun submitArticles(notificationsList: ArrayList<NotificationModel>) {
+    fun submitNotifications(notificationsList: List<NotificationModel.Notifications>) {
         this.notificationList = notificationsList
         notifyDataSetChanged()
     }
 
-    interface OnItemClickListener{
-        fun onItemClicked(notification: NotificationModel)
+    interface OnItemClickListener {
+        fun onItemClicked(notification: NotificationModel.Notifications)
     }
 
 }

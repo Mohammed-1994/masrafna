@@ -5,18 +5,29 @@ import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ScrollView
+import android.widget.TextView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.viewModels
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.masrafna.R
 import com.google.android.material.navigation.NavigationView
 import com.example.masrafna.databinding.ActivityNavigationDrawerBinding
+import com.example.masrafna.ui.navigation.profile.ProfileViewModel
 import com.example.masrafna.util.Session
+import com.makeramen.roundedimageview.RoundedImageView
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation
 
 
 private const val TAG = "NavigationDrarAct myTag"
@@ -25,24 +36,21 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     lateinit var binding: ActivityNavigationDrawerBinding
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d(TAG, "onCreate: ")
         binding = ActivityNavigationDrawerBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
 
-        Session.setDrawer(drawerLayout)
         val navView: NavigationView = binding.navView
 
-        val navController = findNavController(R.id.nav_host_fragment_content_navigation_drawer)
+        navController = findNavController(R.id.nav_host_fragment_content_navigation_drawer)
 
-//        setSupportActionBar(binding.appBarNavigation.toolbar)
-
-
+        setupHeader()
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
@@ -53,14 +61,17 @@ class NavigationDrawerActivity : AppCompatActivity() {
         binding.bottomNav.setupWithNavController(navController)
 
 
+
+        setupBottomNavigation()
+    }
+
+    private fun setupBottomNavigation() {
+
         val mainParms = binding.appBarNavigation.root
             .layoutParams as ViewGroup.MarginLayoutParams
 
         val tempMargin = mainParms.bottomMargin
         navController.addOnDestinationChangedListener { _, destination, _ ->
-//
-//            binding.appBarNavigation.scroll
-//                .fullScroll(ScrollView.FOCUS_UP)
 
             if (destination.id != R.id.nav_contact &&
                 destination.id != R.id.nav_notification_list &&
@@ -84,6 +95,28 @@ class NavigationDrawerActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    private fun setupHeader() {
+
+        val headerView = binding.navView.getHeaderView(0)
+
+        val headerName = headerView.findViewById<TextView>(R.id.header_title)
+
+        val headerImage = headerView.findViewById<RoundedImageView>(R.id.header_imageView)
+        binding.callUs.setOnClickListener {
+            navController.navigate(R.id.nav_contact)
+        }
+
+        if (Session.profileResponse != null) {
+
+            headerName.text = Session.profileResponse!!.payload.name
+            Glide.with(this)
+                .load(Session.profileResponse!!.payload.image)
+                .placeholder(R.drawable.sticker)
+                .apply(RequestOptions.bitmapTransform(RoundedCornersTransformation(50, 0)))
+                .into(headerImage)
+        }
     }
 
 

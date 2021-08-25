@@ -1,5 +1,6 @@
 package com.example.masrafna.api
 
+import android.util.Log
 import com.example.masrafna.util.Session
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -8,6 +9,7 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
+private const val TAG = "MainAPIClient myTag"
 object MainAPIClient {
     private const val BASE_URL = "https://masrafna-iq.com/api/app/"
 
@@ -25,7 +27,7 @@ object MainAPIClient {
                 .addHeader("Authorization","Bearer "+Session.token)
                 .addHeader("Content-Type","application/json")
                 .build()
-
+            Log.d(TAG, "getClient: ${Session.token}")
             return@Interceptor it.proceed(request)
         }
 
