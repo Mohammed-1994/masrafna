@@ -3,14 +3,18 @@ package com.example.masrafna.ui.navigation.home
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.example.masrafna.data.models.ArticleHomeFragmentModel
+import com.bumptech.glide.Glide
+import com.example.masrafna.R
+import com.example.masrafna.data.models.ArticleListModel
 import com.example.masrafna.databinding.MainFragmentArticleItemBinding
 
-class ArticleHomeFragmentAdapter(context: Context) :
+class ArticleHomeFragmentAdapter(val context: Context) :
     RecyclerView.Adapter<ArticleHomeFragmentAdapter.ArticleViewHolder>() {
 
-    private var articlesList = ArrayList<ArticleHomeFragmentModel>()
+    lateinit var articlesList: MutableList<ArticleListModel.Payload.Data?>
 
 
     inner class ArticleViewHolder(val binding: MainFragmentArticleItemBinding) :
@@ -27,21 +31,28 @@ class ArticleHomeFragmentAdapter(context: Context) :
     }
 
     override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
-        val currentArticle = articlesList[position]
-        with(holder) {
-            binding.image.setImageResource(currentArticle.image)
-            binding.desc.text = currentArticle.desc
-            binding.title.text = currentArticle.title
+        with(holder.binding) {
+            val currentArticle = articlesList[position]!!
+
+            articleTitle.text = currentArticle.title
+            articleDesc.text = currentArticle.content
+
+            Glide.with(context)
+                .load(currentArticle.image)
+                .placeholder(R.drawable.sticker)
+                .into(articleImage)
+
+            moreBtn.setOnClickListener {
+                val id = bundleOf("id" to currentArticle.id)
+                it.findNavController()
+                    .navigate(R.id.action_fragment_home_to_fragment_notification, id)
+
+            }
         }
     }
 
     override fun getItemCount(): Int {
         return articlesList.size
-    }
-
-    fun submitArticles(articlesList: ArrayList<ArticleHomeFragmentModel>) {
-        this.articlesList = articlesList
-        notifyDataSetChanged()
     }
 
 

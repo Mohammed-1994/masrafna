@@ -271,7 +271,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/articles_text"
                     android:orientation="horizontal"
-                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:listitem="@layout/main_fragment_article_item" />
             </RelativeLayout>
         </androidx.core.widget.NestedScrollView>

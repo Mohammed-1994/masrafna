@@ -12,7 +12,8 @@ import java.util.concurrent.TimeUnit
 private const val TAG = "MainAPIClient myTag"
 object MainAPIClient {
     private const val BASE_URL = "https://masrafna-iq.com/api/app/"
-
+    const val FIRST_PAGE = 1
+    const val POST_PER_PAGE = 10
 
     fun getClient(): MainInterface {
         val requestInterceptor = Interceptor {

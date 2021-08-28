@@ -18,7 +18,7 @@ import com.example.masrafna.ui.services.credits.CreditsFragment.Companion.docume
 import com.example.masrafna.ui.services.credits.CreditsFragment.Companion.external_remittances
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
-class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
+class CreditsTypeFragment : Fragment() {
 
     private lateinit var binding: FragmentCreditsTypeBinding
     private var viewType = 1
@@ -43,15 +43,7 @@ class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         updateView()
         mContext = requireContext()
         getBanks()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-
-
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
     }
 
 
@@ -134,11 +126,5 @@ class CreditsTypeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-    }
 
 }

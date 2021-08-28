@@ -2,8 +2,9 @@ package com.example.masrafna.data.models
 
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
-data class NewsModel(
+data class NewsListModel(
     @SerializedName("error")
     val error: Boolean,
     @SerializedName("message")
@@ -27,7 +28,11 @@ data class NewsModel(
             @SerializedName("image")
             val image: String,
             @SerializedName("title")
-            val title: String
+            val title: String,
+            @SerializedName("created_at")
+            val createdAt: Date,
+            @SerializedName("updated_at")
+            val updatedAt: Date
         )
 
         data class Links(

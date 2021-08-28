@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:clipToPadding="true"
+    android:paddingBottom="24dp"
     android:elevation="24dp"
     app:cardCornerRadius="20dp">
 
@@ -15,7 +16,7 @@
         app:cardCornerRadius="20dp">
 
         <ImageView
-            android:id="@+id/image"
+            android:id="@+id/article_image"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:scaleType="centerCrop"
@@ -25,7 +26,7 @@
 
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/article_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/card"
@@ -36,11 +37,12 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title"
+        android:id="@+id/article_desc"
         style="@style/hint_font"
+        android:layout_width="match_parent"
+        android:maxLines="3"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/article_title"
         android:gravity="center"
         android:text="@string/see_iraqi_banks"
         android:textStyle="bold" />
@@ -51,7 +53,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/buttons"
-        android:layout_below="@id/desc"
+        android:layout_below="@id/article_desc"
         android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
         android:background="@drawable/main_gradient"

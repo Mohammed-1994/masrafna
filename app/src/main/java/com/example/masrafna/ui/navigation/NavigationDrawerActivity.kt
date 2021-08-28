@@ -5,26 +5,19 @@ import android.util.Log
 import android.view.View.GONE
 import android.view.View.VISIBLE
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.ScrollView
 import android.widget.TextView
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.masrafna.R
 import com.google.android.material.navigation.NavigationView
 import com.example.masrafna.databinding.ActivityNavigationDrawerBinding
-import com.example.masrafna.ui.navigation.profile.ProfileViewModel
 import com.example.masrafna.util.Session
 import com.makeramen.roundedimageview.RoundedImageView
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation
@@ -75,7 +68,7 @@ class NavigationDrawerActivity : AppCompatActivity() {
 
             if (destination.id != R.id.nav_contact &&
                 destination.id != R.id.nav_notification_list &&
-                destination.id != R.id.nav_notification &&
+                destination.id != R.id.nav_article_details &&
                 destination.id != R.id.nav_news &&
                 destination.id != R.id.nav_news_list &&
                 destination.id != R.id.nav_home

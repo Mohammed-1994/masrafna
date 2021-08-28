@@ -1,59 +1,40 @@
-package com.example.masrafna.ui.navigation.news
+package com.example.masrafna.ui.navigation.home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.INVISIBLE
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.masrafna.R
-import com.example.masrafna.api.NetworkStatus
-import com.example.masrafna.data.models.NewsDetails
-import com.example.masrafna.databinding.FragmentNewsBinding
+import com.example.masrafna.data.models.ArticleDetails
+import com.example.masrafna.databinding.FragmentNotificationBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import org.ocpsoft.prettytime.PrettyTime
 
-private const val TAG = "NewsFragment myTag"
+class ArticleFragment : Fragment() {
 
-class NewsFragment : Fragment() {
-
-    private lateinit var binding: FragmentNewsBinding
-    private val newsViewModel: NewsViewModel by viewModels()
+    private lateinit var binding: FragmentNotificationBinding
+    private val viewModel: HomeViewModel by viewModels()
     private var id = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         id = requireArguments().getString("id").toString()
 
-        with(newsViewModel) {
-            networkStatus.observe(this@NewsFragment) {
+        with(viewModel) {
+            networkStatus.observe(this@ArticleFragment) {
                 binding.progressBar.visibility =
-                    if (it == NetworkStatus.LOADING) View.VISIBLE else View.GONE
+                    if (it == com.example.masrafna.api.NetworkStatus.LOADING) android.view.View.VISIBLE else android.view.View.GONE
             }
 
-            newsDetailsResponse.observe(this@NewsFragment, {
-                populateNewsDetails(it)
+            articleDetailsResponse.observe(this@ArticleFragment, {
+                showArticleDetails(it)
             })
 
-        }
-    }
-
-    private fun populateNewsDetails(details: NewsDetails?) {
-        if (details != null) {
-            with(binding) {
-                titleTv.text = details.payload.title
-                date.text = PrettyTime().format(details.payload.createdAt)
-                desc.text = details.payload.content
-
-                Glide.with(requireContext())
-                    .load(details.payload.image)
-                    .placeholder(R.drawable.sticker)
-                    .into(newsImage)
-
-            }
         }
     }
 
@@ -61,7 +42,7 @@ class NewsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentNewsBinding.inflate(inflater, container, false)
+        binding = FragmentNotificationBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -69,7 +50,8 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupToolbar()
 
-        newsViewModel.getNewsDetails(id)
+        viewModel.getArticleDetails(id)
+
     }
 
     private fun setupToolbar() {
@@ -82,12 +64,30 @@ class NewsFragment : Fragment() {
             toolbar.navigateUp.setOnClickListener {
                 findNavController().navigateUp()
             }
-            toolbar.title.visibility = INVISIBLE
+            toolbar.title.visibility = View.INVISIBLE
             if (!resources.getBoolean(R.bool.is_right_to_left)) {
                 toolbar.navigateUp.rotation = 180f
             }
         }
     }
 
+    private fun showArticleDetails(article: ArticleDetails?) {
+
+        if (article != null) {
+            with(binding) {
+                titleTv.text = article.payload.title
+                date.text = PrettyTime().format(article.payload.createdAt)
+                desc.text = article.payload.content
+
+                Glide.with(requireContext())
+                    .load(article.payload.image)
+                    .placeholder(R.drawable.sticker)
+                    .into(notificationImage)
+
+            }
+        }
+
+
+    }
 
 }

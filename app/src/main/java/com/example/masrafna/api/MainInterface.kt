@@ -4,14 +4,12 @@ import com.example.masrafna.data.AboutCondeitionsResponse
 import com.example.masrafna.data.auth.request.*
 import com.example.masrafna.data.auth.response.*
 import com.example.masrafna.data.auth.response.ResetPasswordResponse
-import com.example.masrafna.data.models.NotificationModel
+import com.example.masrafna.data.models.*
 import com.example.masrafna.data.profile.body.UpdatePassword
-import com.example.masrafna.data.profile.body.UpdateProfileBody
 import com.example.masrafna.data.profile.response.ProfileResponse
 import com.example.masrafna.data.profile.response.UpdatePassResponse
 import io.reactivex.Single
 import okhttp3.RequestBody
-import okhttp3.ResponseBody
 import retrofit2.http.*
 
 interface MainInterface {
@@ -102,6 +100,26 @@ interface MainInterface {
 
     @GET("about")
     fun getInfo(): Single<AboutCondeitionsResponse>
+
+
+    /**** News ***////
+    @GET("news")
+    fun getAllNews(@Query("page") page: Int): Single<NewsListModel>
+
+    @GET("news/{id}")
+    fun getNewsDetails(@Path("id") id: String): Single<NewsDetails>
+
+
+    /**** Articles ***////
+    @GET("articles")
+    fun getAllArticles(@Query("page") page: Int): Single<ArticleListModel>
+
+    @GET("article/{id}")
+    fun getArticleDetails(@Path("id") id: String): Single<ArticleDetails>
+
+    /**** Articles ***////
+    @GET("localizations/banks")
+    fun getLocalizations(@Query("page") page: Int): Single<Localizations>
 
 
 }

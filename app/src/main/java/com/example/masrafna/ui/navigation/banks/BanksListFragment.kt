@@ -20,10 +20,9 @@ import com.example.masrafna.databinding.FragmentBanksListBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
-class BanksListFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
+class BanksListFragment : Fragment() {
 
     private lateinit var binding: FragmentBanksListBinding
-    private lateinit var localizationListAdapter: LocalizationListAdapter
     private var mContext: Context? = null
     private var banksList = ArrayList<BankModel>()
 
@@ -41,15 +40,7 @@ class BanksListFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         setupToolbar()
         mContext = requireContext()
         getBanks()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-
-
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
     }
 
     private fun setupToolbar() {
@@ -109,17 +100,5 @@ class BanksListFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-        findNavController().graph.findNode(R.id.nav_bankDetailsFragment)
-            ?.label = bank.title
-        findNavController().navigate(
-            R.id.action_nav_banksListFragment_to_nav_bankDetailsFragment, id
-        )
-
-    }
 
 }

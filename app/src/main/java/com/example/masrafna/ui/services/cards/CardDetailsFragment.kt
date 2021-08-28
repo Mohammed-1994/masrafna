@@ -22,7 +22,7 @@ import com.example.masrafna.util.NoOfColumns
 
 private const val TAG = "CardDetailsFragment myTag"
 
-class CardDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
+class CardDetailsFragment : Fragment() {
     private lateinit var binding: FragmentCardDetailsBinding
     private lateinit var cardsModel: CardsModel
     private lateinit var localizationListAdapter: LocalizationListAdapter
@@ -42,16 +42,7 @@ class CardDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
         mContext = requireContext()
         setupToolbar()
         getBanks()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-
-
-            layoutManager = GridLayoutManager(requireContext(), 2)
-
-        }
     }
 
     private fun setupToolbar() {
@@ -112,12 +103,5 @@ class CardDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-
-    }
 
 }

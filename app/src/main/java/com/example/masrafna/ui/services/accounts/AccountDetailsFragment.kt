@@ -18,7 +18,7 @@ import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 import com.example.masrafna.util.NoOfColumns
 
-class AccountDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
+class AccountDetailsFragment : Fragment() {
 
     private lateinit var binding: FragmentAccountDetailsBinding
     private lateinit var localizationListAdapter: LocalizationListAdapter
@@ -40,13 +40,7 @@ class AccountDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked
         getBanks()
 
         setupToolbar()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
     }
     private fun setupToolbar() {
 
@@ -106,10 +100,4 @@ class AccountDetailsFragment : Fragment(), LocalizationListAdapter.OnBankClicked
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-    }
 }

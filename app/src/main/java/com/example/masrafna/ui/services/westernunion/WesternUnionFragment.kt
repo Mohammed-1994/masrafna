@@ -16,7 +16,7 @@ import com.example.masrafna.databinding.FragmentWesternUnionBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
-class WesternUnionFragment : Fragment() , LocalizationListAdapter.OnBankClicked{
+class WesternUnionFragment : Fragment() {
 
     private lateinit var localizationListAdapter: LocalizationListAdapter
     private var mContext: Context? = null
@@ -38,15 +38,6 @@ class WesternUnionFragment : Fragment() , LocalizationListAdapter.OnBankClicked{
 
         mContext = requireContext()
         getBanks()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
-
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-
-
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
 
     }
 
@@ -108,14 +99,5 @@ class WesternUnionFragment : Fragment() , LocalizationListAdapter.OnBankClicked{
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-        findNavController().navigate(R.id.action_nav_westernUnionFragment_to_nav_westernUnionDetailsFragment
-        ,id)
-
-    }
 
 }

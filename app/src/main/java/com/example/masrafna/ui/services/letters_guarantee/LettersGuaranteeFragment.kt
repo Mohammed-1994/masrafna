@@ -16,7 +16,7 @@ import com.example.masrafna.databinding.FragmentLettersGuaranteeBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
-class LettersGuaranteeFragment : Fragment(), LocalizationListAdapter.OnBankClicked {
+class LettersGuaranteeFragment : Fragment() {
 
     private lateinit var binding: FragmentLettersGuaranteeBinding
     private lateinit var localizationListAdapter: LocalizationListAdapter
@@ -37,15 +37,7 @@ class LettersGuaranteeFragment : Fragment(), LocalizationListAdapter.OnBankClick
 
         setupToolbar()
         getBanks()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-
-
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
     }
 
     private fun setupToolbar() {
@@ -106,11 +98,5 @@ class LettersGuaranteeFragment : Fragment(), LocalizationListAdapter.OnBankClick
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-    }
 
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:layout_margin="8dp"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ui.navigation.notifications.NotificationFragment">
+    tools:context=".ui.navigation.home.ArticleFragment">
 
     <include
         android:id="@+id/toolbar"
@@ -27,6 +27,17 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="48dp">
 
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress_bar"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:elevation="16dp"
+                android:visibility="gone"
+                app:SpinKit_Color="#01BBFC" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/card"
                 android:layout_width="match_parent"
@@ -38,8 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/brochure" />
-
+/>
             </androidx.cardview.widget.CardView>
 
 
@@ -50,7 +60,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/card"
                 android:gravity="center"
-                android:text="@string/banks"
                 android:textColor="@color/black"
                 android:textStyle="bold" />
 
@@ -61,7 +70,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/title_tv"
                 android:gravity="center"
-                android:text="13/6/1994"
                 android:textStyle="bold" />
 
             <TextView
@@ -71,7 +79,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/date"
                 android:gravity="center"
-                android:text="@string/see_iraqi_banks"
                 android:textStyle="bold" />
 
 

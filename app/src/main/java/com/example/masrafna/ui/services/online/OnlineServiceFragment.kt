@@ -16,7 +16,7 @@ import com.example.masrafna.databinding.FragmentOnlineServiceBinding
 import com.example.masrafna.ui.navigation.NavigationDrawerActivity
 import com.example.masrafna.ui.services.localization.LocalizationListAdapter
 
-class OnlineServiceFragment : Fragment() , LocalizationListAdapter.OnBankClicked {
+class OnlineServiceFragment : Fragment() {
 
     private lateinit var localizationListAdapter: LocalizationListAdapter
     private var mContext: Context? = null
@@ -37,15 +37,7 @@ class OnlineServiceFragment : Fragment() , LocalizationListAdapter.OnBankClicked
         setupToolbar()
         mContext = requireContext()
         getBanks()
-        localizationListAdapter = LocalizationListAdapter(mContext!!, this)
 
-        binding.banksRv.apply {
-            localizationListAdapter.submitBanks(banksList)
-            adapter = localizationListAdapter
-
-
-            layoutManager = GridLayoutManager(requireContext(), 2)
-        }
 
     }
 
@@ -107,13 +99,4 @@ class OnlineServiceFragment : Fragment() , LocalizationListAdapter.OnBankClicked
 
     }
 
-    override fun onClick(bank: BankModel) {
-        val id = bundleOf(
-            "id" to bank.title
-        )
-
-        findNavController().navigate(R.id.action_nav_onlineServiceFragment_to_onlineServicesDetailsFragment
-            ,id)
-
-    }
 }

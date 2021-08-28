@@ -102,4 +102,7 @@ dependencies {
     //time formatter string
     implementation 'org.ocpsoft.prettytime:prettytime:4.0.4.Final'
 
+    //paging
+    implementation 'androidx.paging:paging-runtime-ktx:3.0.1'
+
 }
