@@ -117,7 +117,23 @@
     <fragment
         android:id="@+id/nav_bankDetailsFragment"
         android:name="com.example.masrafna.ui.navigation.banks.BankDetailsFragment"
-        tools:layout="@layout/fragment_bank_details" />
+        tools:layout="@layout/fragment_bank_details" >
+        <action
+            android:id="@+id/action_nav_bankDetailsFragment_to_branchesFragment"
+            app:destination="@id/branchesFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"/>
+
+        <action
+            android:id="@+id/action_nav_bankDetailsFragment_to_loanListFragment"
+            app:destination="@id/nav_fragment_personal_loans_list"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left"/>
+    </fragment>
     <fragment
         android:id="@+id/nav_logout"
         android:name="com.example.masrafna.ui.navigation.logout.LogoutFragment"
@@ -246,10 +262,17 @@
         android:label="@string/loans_and_financing"
         tools:layout="@layout/fragment_loans_list">
 
+        <action
+            android:id="@+id/action_loan_list_fragment_to_viewPagerDetailsFragment"
+            app:destination="@id/nav_bankViewPagerDetailsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
 
         <action
-            android:id="@+id/action_from_personal_loans_list_to_personal_loan_fragment"
-            app:destination="@id/nav_personal_loan_fragment"
+            android:id="@+id/action_from_personal_loans_list_to_loan_details_fragment"
+            app:destination="@id/nav_personal_loan_details_fragment"
             app:enterAnim="@anim/from_left"
             app:exitAnim="@anim/to_right"
             app:popEnterAnim="@anim/from_right"
@@ -296,7 +319,13 @@
         android:name="com.example.masrafna.ui.services.loans_and_financing.LoanDetailsFragment"
         android:label="@string/loans_and_financing"
         tools:layout="@layout/fragment_loan_details">
-
+        <action
+            android:id="@+id/action_cards_fragment_to_cardDetailsFragment"
+            app:destination="@id/nav_bankViewPagerDetailsFragment"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
 
     </fragment>
     <fragment
@@ -427,4 +456,14 @@
         android:name="com.example.masrafna.ui.services.others.ServiceDetailsFragment"
         android:label="@string/other_bank_services"
         tools:layout="@layout/fragment_service_details" />
+    <fragment
+        android:id="@+id/branchesFragment"
+        android:name="com.example.masrafna.ui.navigation.banks.branches.BranchesFragment"
+        android:label="fragment_brances"
+        tools:layout="@layout/fragment_brances" />
+    <fragment
+        android:id="@+id/nav_bankViewPagerDetailsFragment"
+        android:name="com.example.masrafna.ui.services.loans_and_financing.viewPager.BankViewPagerDetailsFragment"
+        android:label="fragment_bank_view_pager_details"
+        tools:layout="@layout/fragment_bank_view_pager_details" />
 </navigation>

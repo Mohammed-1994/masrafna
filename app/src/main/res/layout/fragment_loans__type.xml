@@ -34,7 +34,7 @@
                 android:src="@drawable/loans_and_financing" />
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/type_title"
                 style="@style/Titles_font"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,10 +47,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/title"
+                android:layout_below="@id/type_title"
                 android:layout_marginHorizontal="48dp"
                 android:layout_marginTop="48dp"
                 android:orientation="vertical"
+                android:paddingBottom="8dp"
                 android:paddingVertical="16dp">
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -80,6 +81,7 @@
                     android:drawableLeft="@drawable/go_arrow"
                     android:gravity="center"
                     android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="8dp"
                     android:paddingVertical="16dp"
                     android:text="@string/company_loans" />
 

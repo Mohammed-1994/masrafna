@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -23,64 +24,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <LinearLayout
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/loans_rv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/loans_item"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:id="@+id/progress_bar"
+                style="@style/SpinKitView.Large.Circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:layout_marginHorizontal="48dp"
-                android:paddingBottom="24dp"
-                android:layout_marginTop="48dp"
-                android:orientation="vertical"
-                android:paddingVertical="16dp">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/personal_loans1"
-                    style="@style/normal_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/ripple_button_background"
-                    android:drawableLeft="@drawable/go_arrow"
-                    android:gravity="start"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="16dp"
-                    android:text="قرض أفراد 1" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/personal_loans2"
-                    style="@style/normal_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/ripple_button_background"
-                    android:drawableLeft="@drawable/go_arrow"
-                    android:gravity="start"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="16dp"
-                    android:text="قرض أفراد 2" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/personal_loans3"
-                    style="@style/normal_font"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="8dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/ripple_button_background"
-                    android:drawableLeft="@drawable/go_arrow"
-                    android:gravity="start"
-                    android:paddingHorizontal="16dp"
-                    android:paddingVertical="16dp"
-                    android:text="قرض أفراد 3" />
-
-            </LinearLayout>
-
+                android:layout_gravity="center"
+                android:elevation="16dp"
+                android:visibility="visible"
+                app:SpinKit_Color="#01BBFC" />
         </RelativeLayout>
+
+
     </androidx.core.widget.NestedScrollView>
 
 </RelativeLayout>

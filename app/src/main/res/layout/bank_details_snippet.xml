@@ -6,46 +6,45 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/bank_image"
         android:layout_width="160dp"
         android:layout_height="160dp"
         android:layout_marginVertical="16dp"
-        android:contentDescription="bank image"
-        android:layout_marginStart="16dp"
         android:background="@drawable/ripple_button_background"
+        android:contentDescription="bank image"
         android:src="@drawable/bank_image"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.205" />
 
     <TextView
         android:id="@+id/about"
         style="@style/Titles_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginRight="8dp"
         android:text="@string/about_the_bank"
         android:textColor="#1797E8"
-        app:layout_constraintStart_toEndOf="@+id/bank_image"
+        app:layout_constraintRight_toLeftOf="@id/bank_image"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/about_text"
         style="@style/normal_font"
         android:layout_width="0dp"
-        android:paddingTop="8dp"
-        android:paddingStart="8dp"
-        android:textSize="14sp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:maxLines="4"
+        android:padding="8dp"
         android:text="@string/localization_bank_desc"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/bank_image"
+        android:textSize="14sp"
+        app:layout_constraintRight_toLeftOf="@+id/bank_image"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/about" />
 
     <TextView
@@ -53,13 +52,13 @@
         style="@style/normal_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
-        android:drawableStart="@drawable/locaion_icon"
+        android:drawableRight="@drawable/locaion_icon"
         android:drawablePadding="8dp"
         android:text="@string/address"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bank_image" />
 
     <TextView
@@ -68,10 +67,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="14sp"
-        android:layout_marginStart="8dp"
-        android:text="بغداد - الحارثية - شارع الكندي"
-        app:layout_constraintEnd_toStartOf="@+id/email_text"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity=""
+        android:layout_marginRight="8dp"
+        android:paddingLeft="8dp"
+        android:text="شارع الوحدات بجانب المفترق الكبير شارع الوحدات بجانب المفترق الكبير "
+        app:layout_constraintLeft_toRightOf="@+id/email_text"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address" />
 
     <TextView
@@ -79,13 +80,13 @@
         style="@style/normal_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:drawableStart="@drawable/email_icon"
+        android:layout_marginRight="8dp"
+        android:drawableLeft="@drawable/email_icon"
         android:drawablePadding="16dp"
         android:text="@string/email"
         android:layout_marginTop="16dp"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bank_image" />
 
     <TextView
@@ -93,13 +94,14 @@
         style="@style/normal_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginTop="4dp"
+        android:gravity="left"
         android:text="info@masrafna.com"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/about_text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/about_text"
         app:layout_constraintTop_toBottomOf="@+id/email" />
 
     <TextView
@@ -107,13 +109,13 @@
         style="@style/normal_font"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        android:drawableStart="@drawable/phone_icon"
+        android:drawableRight="@drawable/phone_icon"
         android:drawablePadding="8dp"
         android:text="@string/contact_no"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
     <TextView
@@ -121,9 +123,9 @@
         style="@style/normal_font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginRight="16dp"
         android:text="1234568"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/phone" />
 
     <TextView
@@ -133,11 +135,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:drawableStart="@drawable/network_icon"
+        android:drawableLeft="@drawable/network_icon"
         android:drawablePadding="16dp"
         android:text="@string/website"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/address_text" />
 
     <TextView
@@ -145,10 +147,10 @@
         style="@style/normal_font"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
         android:text="www.masrafna.com"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/phone_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/phone_text"
         app:layout_constraintTop_toBottomOf="@+id/website" />
 
 
